@@ -4,6 +4,7 @@ import React from 'react';
 import NavbarSection from '../home/NavbarSection';
 import JumbotronSection from '../home/JumbotronSection';
 import VideoSection from '../home/VideoSection';
+import OurproductsSection from '../home/OurproductsSection';
 
 import { makeStyles, withTheme } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -26,6 +27,7 @@ export default function Home() {
       <img src={ImgPattern} className={classes.backgroundImage} alt='website background' />
       <JumbotronSection/>
       <VideoSection/>
+      <OurproductsSection/>
     </div>
   )
 }
