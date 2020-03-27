@@ -5,6 +5,8 @@ import NavbarSection from '../home/NavbarSection';
 import JumbotronSection from '../home/JumbotronSection';
 import VideoSection from '../home/VideoSection';
 import OurproductsSection from '../home/OurproductsSection';
+import FindusSection from '../home/FindusSection';
+import FooterSection from '../home/FooterSection'
 
 import { makeStyles, withTheme } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -23,11 +25,13 @@ export default function Home() {
   const classes = useStyles();
 
   return (
-    <div>
-      <img src={ImgPattern} className={classes.backgroundImage} alt='website background' />
-      <JumbotronSection/>
-      <VideoSection/>
-      <OurproductsSection/>
+    <div className={classes.firstDiv}>
+      {/* <img src={ImgPattern} className={classes.backgroundImage} alt='website background' /> */}
+      <JumbotronSection />
+      <VideoSection />
+      <OurproductsSection />
+      <FindusSection />
+      <FooterSection />
     </div>
   )
 }
@@ -63,7 +67,8 @@ const useStyles = makeStyles(theme => ({
     backgroundImage: `url(${HomeBackgroundImage})`,
     backgroundSize: 'cover',
   },
-  secondContainer: {
-    
+  firstDiv: {
+    backgroundImage: `url(${ImgPattern})`,
+    backgroundSize: 'cover',
   }
 }));

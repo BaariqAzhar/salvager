@@ -17,9 +17,14 @@ import Container from '@material-ui/core/Container';
 import ImgPattern from '../../assets/img/pattern.png'
 import ImgVideo from '../../assets/img/video.png'
 import ImgProducts1 from '../../assets/img/p1.png'
+import ImgProducts2 from '../../assets/img/p2.png'
+import ImgProducts3 from '../../assets/img/p3.png'
+import ImgProducts4 from '../../assets/img/p4.png'
+import ImgProducts5 from '../../assets/img/p5.png'
 import ImgStar5 from '../../assets/img/star5.png'
 import ImgStar4 from '../../assets/img/star4.png'
 import ImgStar3 from '../../assets/img/star3.png'
+import { Link } from '@material-ui/core';
 
 export default function OurproductsSection() {
   const classes = useStyles();
@@ -29,23 +34,35 @@ export default function OurproductsSection() {
       <Typography className={classes.title} variant="h3" gutterBottom align="center">
         Our Products </Typography>
       <Grid container>
-        <Grid item xs={3} sm={2}>
-          <ItemProduct name='Dummy Text' star='5' price='Rp 300.000' />
+        <Grid item xs={4} sm={2}>
+        <Button className={classes.viewButton}>
+            <ItemProduct name='Dummy Text' star='5' price='Rp 300.000' product={ImgProducts1} />
+          </Button>
         </Grid>
-        <Grid item xs={3} sm={2}>
-          
+        <Grid item xs={4} sm={2}>
+          <Button className={classes.viewButton}>
+            <ItemProduct name='Dummy Text' star='5' price='Rp 300.000' product={ImgProducts2} />
+          </Button>
         </Grid>
-        <Grid item xs={3} sm={2}>
-
+        <Grid item xs={4} sm={2}>
+        <Button className={classes.viewButton}>
+            <ItemProduct name='Dummy Text' star='5' price='Rp 300.000' product={ImgProducts3} />
+          </Button>
         </Grid>
-        <Grid item xs={3} sm={2}>
-
+        <Grid item xs={4} sm={2}>
+        <Button className={classes.viewButton}>
+            <ItemProduct name='Dummy Text' star='5' price='Rp 300.000' product={ImgProducts4} />
+          </Button>
         </Grid>
-        <Grid item xs={3} sm={2}>
-
+        <Grid item xs={4} sm={2}>
+        <Button className={classes.viewButton}>
+            <ItemProduct name='Dummy Text' star='5' price='Rp 300.000' product={ImgProducts5} />
+          </Button>
         </Grid>
-        <Grid item xs={3} sm={2}>
-
+        <Grid item xs={4} sm={2}>
+        <Button className={classes.viewButton}>
+            <ItemProduct name='Dummy Text' star='5' price='Rp 300.000' product={ImgProducts3} />
+          </Button>
         </Grid>
       </Grid>
     </div>
@@ -53,6 +70,17 @@ export default function OurproductsSection() {
 }
 
 const useStyles = makeStyles(theme => ({
+  root: {
+    '& > *': {
+      Button: {
+        textTransform: 'none'
+      },
+    },
+  },
+  viewButton: {
+    textTransform: 'none',
+    margin: '0%'
+  },
   title: {
     marginTop: '5%'
   },
@@ -84,7 +112,7 @@ function ItemProduct(props) {
   }
   return (
     <div>
-      <img className={classes.imgProducts} src={ImgProducts1} />
+      <img className={classes.imgProducts} src={props.product} />
       <Typography variant="h6" gutterBottom align='center'>
         {props.name} </Typography>
       <img className={classes.imgStar} src={StarImg} />
