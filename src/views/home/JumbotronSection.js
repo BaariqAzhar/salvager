@@ -1,7 +1,7 @@
 import React from 'react';
 // import logo from './logo.svg';
 // import './App.css';
-import NavbarSection from '../home/NavbarSection';
+import NavbarSection from '../NavbarSection';
 import { makeStyles, withTheme } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import HomeBackgroundImage from '../../assets/img/home-background.png'
@@ -13,6 +13,12 @@ import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
 import ImgPattern from '../../assets/img/pattern.png'
 import ImgVideo from '../../assets/img/video.png'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
 
 export default function JumbotronSection() {
     const classes = useStyles();
@@ -21,7 +27,7 @@ export default function JumbotronSection() {
         <div>
             <div className={classes.firstContainer}>
                 <Container>
-                    <NavbarSection />
+                    <NavbarSection theme="light" />
                     <Grid container>
                         <Grid item item xs={12} sm={6}>
                             <Typography className={classes.descriptionBackground} variant="h5" gutterBottom>

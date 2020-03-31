@@ -1,7 +1,6 @@
 import React from 'react';
 // import logo from './logo.svg';
 // import './App.css';
-import NavbarSection from './NavbarSection';
 import JumbotronSection from './JumbotronSection';
 import VideoSection from './VideoSection';
 

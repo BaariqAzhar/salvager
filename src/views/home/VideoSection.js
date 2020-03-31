@@ -1,7 +1,6 @@
 import React from 'react';
 // import logo from './logo.svg';
 // import './App.css';
-import NavbarSection from '../home/NavbarSection';
 import JumbotronSection from '../home/JumbotronSection';
 import { makeStyles, withTheme } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';

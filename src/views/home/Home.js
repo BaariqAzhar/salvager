@@ -1,7 +1,6 @@
 import React from 'react';
 // import logo from './logo.svg';
 // import './App.css';
-import NavbarSection from '../home/NavbarSection';
 import JumbotronSection from '../home/JumbotronSection';
 import VideoSection from '../home/VideoSection';
 import OurproductsSection from '../home/OurproductsSection';
@@ -12,7 +11,6 @@ import { makeStyles, withTheme } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import HomeBackgroundImage from '../../assets/img/home-background.png'
 import '../../assets/css/home.css'
-import BackgroundImage from "react-background-image";
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
@@ -62,10 +60,6 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: '#434c57',
     color: 'white',
     marginBottom: '5%',
-  },
-  firstContainer: {
-    backgroundImage: `url(${HomeBackgroundImage})`,
-    backgroundSize: 'cover',
   },
   firstDiv: {
     backgroundImage: `url(${ImgPattern})`,

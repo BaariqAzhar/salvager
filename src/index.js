@@ -5,9 +5,10 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 import { createBrowserHistory } from 'history'
-import { Router, Route, Switch} from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 
 import Home from '../src/views/home/Home';
+import Products from '../src/views/products/Products';
 import Coba from '../src/views/Coba'
 
 var hist = createBrowserHistory();
@@ -15,6 +16,7 @@ ReactDOM.render(
     <Router history={hist}>
         <Switch>
             <Route path="/coba" component={Coba} />
+            <Route path="/products" component={Products} />
             <Route path="" component={Home} />
         </Switch>
     </Router>,
