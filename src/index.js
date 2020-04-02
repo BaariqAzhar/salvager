@@ -9,6 +9,7 @@ import { Router, Route, Switch } from 'react-router-dom';
 
 import Home from '../src/views/home/Home';
 import Products from '../src/views/products/Products';
+import Contact from '../src/views/contact/Contact'
 import Coba from '../src/views/Coba'
 
 var hist = createBrowserHistory();
@@ -17,6 +18,7 @@ ReactDOM.render(
         <Switch>
             <Route path="/coba" component={Coba} />
             <Route path="/products" component={Products} />
+            <Route path="/contact" component={Contact} />
             <Route path="" component={Home} />
         </Switch>
     </Router>,
