@@ -9,6 +9,8 @@ import { Router, Route, Switch } from 'react-router-dom';
 
 import Home from '../src/views/home/Home';
 import Products from '../src/views/products/Products';
+import Products2 from '../src/views/products/Products2';
+import Diary from '../src/views/diary/Diary';
 import Contact from '../src/views/contact/Contact'
 import Coba from '../src/views/Coba'
 
@@ -18,6 +20,8 @@ ReactDOM.render(
         <Switch>
             <Route path="/coba" component={Coba} />
             <Route path="/products" component={Products} />
+            <Route path="/products2" component={Products2} />
+            <Route path="/diary" component={Diary} />
             <Route path="/contact" component={Contact} />
             <Route path="" component={Home} />
         </Switch>
