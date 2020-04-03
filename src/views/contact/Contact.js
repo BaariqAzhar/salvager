@@ -20,6 +20,7 @@ import ImgPattern from '../../assets/img/pattern2.png'
 import ImgIg from '../../assets/img/ig.png'
 import ImgWhatsapp from '../../assets/img/wa.png'
 import ImgTokopedia from '../../assets/img/tokped.png'
+import ImgEmail from '../../assets/img/email.png'
 
 export default function Contact() {
     const classes = useStyles();
@@ -28,48 +29,37 @@ export default function Contact() {
         <Grid className={classes.firstDiv}>
             <Container>
                 <NavbarSection theme='dark' />
-                <Grid className={classes.content} container spacing={4}>
-                    <Grid className={classes.listdiv} xs={12} sm={12}>
-                        <List
-                            className={classes.list}
-                            alignItems="center"
-                            justify="center"
-                        >
-                            <ListItem>
-                                <ListItemAvatar>
-                                    <Avatar src={ImgWhatsapp} />
-                                </ListItemAvatar>
-                                <ListItemText primary="+6232234324234" />
-                            </ListItem>
-                            <ListItem>
-                                <ListItemAvatar>
-                                    <Avatar src={ImgIg} />
-                                </ListItemAvatar>
-                                <ListItemText primary="salvager" />
-                            </ListItem>
-                            <ListItem>
-                                <ListItemAvatar>
-                                    <Avatar src={ImgTokopedia} />
-                                </ListItemAvatar>
-                                <ListItemText primary="salvager" />
-                            </ListItem>
-                            <ListItem>
-                                <ListItemAvatar>
-                                    <Avatar>
-                                    </Avatar>
-                                </ListItemAvatar>
-                                <ListItemText primary="info@salvager.com" />
-                            </ListItem>
-                        </List>
-                        <Typography className={classes.contact} variant="h3" gutterBottom align="center"></Typography>
-                    </Grid>
-                    <Grid className={classes.formGrid} item xs={12} sm={12}>
+                <Typography variant="h3" align='center'>Diary</Typography>
+                <div align='center' className={classes.list}>
+                    <img src={ImgWhatsapp} />
+                    <Typography className={classes.listText} display="inline" variant="h6" gutterBottom align="center">
+                        +6232234324234 </Typography>
+                </div>
+                <div align='center' className={classes.list}>
+                    <img src={ImgIg} />
+                    <Typography className={classes.listText} display="inline" variant="h6" gutterBottom align="center">
+                        salvagerindonesia </Typography>
+                </div>
+                <div align='center' className={classes.list}>
+                    <img src={ImgTokopedia} />
+                    <Typography className={classes.listText} display="inline" variant="h6" gutterBottom align="center">
+                        salvagerindonesia </Typography>
+                </div>
+                <div align='center' className={classes.list}>
+                    <img src={ImgEmail} />
+                    <Typography className={classes.listText} display="inline" variant="h6" gutterBottom align="center">
+                        info@salvager.com </Typography>
+                </div>
+
+                <Grid container className={classes.content} container spacing={4}>
+                    <Grid item xs={12} sm={3}></Grid>
+                    <Grid item className={classes.formGrid} item xs={12} sm={6}>
                         <form className={classes.form} noValidate autoComplete="off">
                             <TextField
                                 id="name"
                                 label='Name'
                                 className={classes.textField}
-                                placeholder="Write your message here..."
+                                placeholder="Write your name here..."
                                 fullWidth
                                 variant="filled"
                             />
@@ -77,7 +67,7 @@ export default function Contact() {
                                 id="email"
                                 label='Email'
                                 className={classes.textField}
-                                placeholder="Write your message here..."
+                                placeholder="Write your email here..."
                                 fullWidth
                                 variant="filled"
                             />
@@ -85,7 +75,7 @@ export default function Contact() {
                                 id="phone"
                                 label='Phone Number'
                                 className={classes.textField}
-                                placeholder="Write your message here..."
+                                placeholder="Write your phone number here..."
                                 fullWidth
                                 variant="filled"
                             />
@@ -106,8 +96,9 @@ export default function Contact() {
                         sm={12}
                         justify="center"
                         align="center">
-                        <Button variant="contained" color="primary" cir>Submit</Button>
+                        <Button className={classes.button} variant="contained">Send Now</Button>
                     </Grid>
+                    
                 </Grid>
             </Container>
             <FooterSection />
@@ -126,6 +117,9 @@ const useStyles = makeStyles(theme => ({
     link: {
     },
     listdiv: {
+        margin: 'auto',
+        width: '50%',
+        padding: '10px',
     },
     formGrid: {
         paddingLeft: '8rem',
@@ -136,6 +130,17 @@ const useStyles = makeStyles(theme => ({
     },
     textField: {
         marginBottom: '1rem',
-        color: 'white'
+        backgroundColor: 'white'
+    },
+    list: {
+        marginTop: '2rem'
+    },
+    listText: {
+        marginLeft: '1em'
+    },
+    button: {
+        backgroundColor: '#434c57',
+        color: 'white',
+        marginBottom: '5%',
     }
 }));
