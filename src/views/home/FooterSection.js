@@ -31,7 +31,7 @@ export default function FooterSection() {
     return (
         <div>
             <Grid container className={classes.container}>
-                <Grid item xs={12} sm={4}>
+                <Grid item xs={12} sm={4} className={classes.gridItem}>
                     <Box
                         display="flex"
                         alignItems="center"
@@ -44,7 +44,7 @@ export default function FooterSection() {
                             direction="column" src={WhiteLogo} className={classes.whiteLogo} />
                     </Box>
                 </Grid>
-                <Grid item xs={12} sm={3}>
+                <Grid item xs={12} sm={3} className={classes.gridItem}>
                     <Typography variant="subtitle1" gutterBottom className={classes.text}>
                         Official Account
                     </Typography>
@@ -67,7 +67,7 @@ export default function FooterSection() {
                         </Typography>
                     </div>
                 </Grid>
-                <Grid item xs={12} sm={2}>
+                <Grid item xs={12} sm={2} className={classes.gridItem}>
                     <Typography variant="subtitle1" gutterBottom className={classes.text}>
                         Info
                     </Typography>
@@ -92,7 +92,7 @@ export default function FooterSection() {
                         </Typography>
                     </div>
                 </Grid>
-                <Grid item xs={12} sm={3}>
+                <Grid item xs={12} sm={3} className={classes.gridItem}>
                     <div>
                         <img src={letterIcon} className={classes.letterIcon} />
                         <Typography display="inline" variant="subtitle1" gutterBottom className={classes.text}>
@@ -147,4 +147,7 @@ const useStyles = makeStyles(theme => ({
         color: 'black',
         marginTop: '1em',
     },
+    gridItem: {
+        marginBottom: '1rem'
+    }
 }));
