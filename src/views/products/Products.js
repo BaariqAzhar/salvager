@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { makeStyles, withTheme } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid'
@@ -21,19 +22,19 @@ import ImgStar3 from '../../assets/img/star3.png'
 
 export default function Products() {
     const classes = useStyles();
-
     return (
         <div className={classes.firstDiv}>
             <Container>
-                <NavbarSection theme='dark'/>
+                {console.log('asd')}
+                <NavbarSection theme='dark' />
                 <Grid container>
                     <Grid item xs={6} sm={4}>
                         <ItemProduct
                             name='Product Text'
                             star='5'
                             price='Rp 300.000'
-                            product={ImgProducts1} 
-                            link="/product1"/>
+                            product={ImgProducts1}
+                            link="/product1" />
                     </Grid>
                     <Grid item xs={6} sm={4}>
 

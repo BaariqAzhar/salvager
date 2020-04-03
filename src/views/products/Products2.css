@@ -1,0 +1,25 @@
+.firstDiv{
+    background-image: url(../../assets/img/pattern2.png);
+    background-size: 'cover';
+}
+.productImg {
+    width: '100%'
+}
+.imgProducts {
+    width: '100%';
+    margin-bottom: '1rem';
+}
+.cobaCoba{
+    color: springgreen;
+    background-color: brown;
+}
+.imgStar {
+    width: 30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+}
+.button{
+    background-color: brown;
+}
