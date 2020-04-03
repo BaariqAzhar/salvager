@@ -22,65 +22,40 @@ import ImgStar3 from '../../assets/img/star3.png'
 
 export default function Products() {
     const classes = useStyles();
+    const [products, setProducts] = useState([])
 
-    const [hasError, setErrors] = useState(false);
-    const [products, setProducts] = useState({})
-
-    async function fetchData() {
-        const res = await fetch("salvagerapi.salvagerindonesia.com/api/v1/products/?format=json")
+    async function fetchProducts() {
+        const res = await fetch("https://salvagerapi.salvagerindonesia.com/api/v1/products/?format=json")
         const products = await res.json()
-        // const [item] = products;
-        // console.log(products);
-        setProducts(products);
+        setProducts(products)
+        console.log(products)
     }
 
-    console.log(products)
-    // var productsList = products.map((product) => {
-    //     return (
-    //         <div key={product.toString()}>
-    //             {/* <ItemProduct2 product={product} /> */}
-    //         </div>
-    //     )
-    // })
-
     useEffect(() => {
-        fetchData();
+        fetchProducts();
     }, []);
 
+    const productList = products.map((product) => {
+        const link = "/product/" + product.id
+        const imageLink = "https://salvagerapi.salvagerindonesia.com" + product.product_images[0]
+        console.log(imageLink)
+        return <div>
+            <Grid item xs={6} sm={4}>
+                <ItemProduct
+                    name={product.name}
+                    star={product.rating}
+                    price={product.price}
+                    product={imageLink}
+                    link={link} />
+            </Grid>
+        </div>
+    })
     return (
         <div className={classes.firstDiv}>
             <Container>
-                {/* {productsList} */}
-                {/* {console.log(products.name)} */}
-                {/* {console.log(products.map((product) => {
-                    product.name
-                }))} */}
                 <NavbarSection theme='dark' />
                 <Grid container>
-                    <Grid item xs={6} sm={4}>
-                        <ItemProduct
-                            name='Product Text'
-                            star='5'
-                            price='Rp 300.000'
-                            product={ImgProducts1}
-                            link="/product1" />
-                    </Grid>
-                    <Grid item xs={6} sm={4}>
-                        <ItemProduct
-                            name='Parfum'
-                            star='5'
-                            price='Rp 300.000'
-                            product={ImgProducts1}
-                            link="/product1" />
-                    </Grid>
-                    <Grid item xs={6} sm={4}>
-                        <ItemProduct
-                            name='Parfum'
-                            star='5'
-                            price='Rp 300.000'
-                            product={ImgProducts1}
-                            link="/product1" />
-                    </Grid>
+                    {productList}
                 </Grid>
             </Container>
         </div>
