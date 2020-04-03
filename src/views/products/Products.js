@@ -37,7 +37,12 @@ export default function Products() {
                             link="/product1" />
                     </Grid>
                     <Grid item xs={6} sm={4}>
-
+                        <ItemProduct
+                            name='Parfum'
+                            star='5'
+                            price='Rp 300.000'
+                            product={ImgProducts1}
+                            link="/product1" />
                     </Grid>
                     <Grid item xs={6} sm={4}>
 
