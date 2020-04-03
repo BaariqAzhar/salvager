@@ -52,12 +52,15 @@ const useStyles = makeStyles(theme => ({
         flex: '1 0 auto',
     },
     diaryImage: {
-        height: '32rem',
-        width: '32rem',
-        margin: '2rem'
+        // height: '32rem',
+        width: '100%',
+        margin: '2rem',
+        display: 'block',
+        marginLeft: 'auto',
+        marginRight: 'auto',
     },
     diaryTextContainer: {
-        marginTop: '2rem',
+        marginTop: '1rem',
         marginRight: '2rem',
         marginBottom: '2rem',
         marginLeft: '0rem',
@@ -71,17 +74,20 @@ function ItemDiary(props) {
     return (
         <div className={classes.diary}>
             <Grid container>
-                <Grid item xs={12} sm={6}>
+                <Grid item xs={12} sm={6} md={6}>
                     <img className={classes.diaryImage} src={diary.image} />
                 </Grid>
-                <Grid item xs={12} sm={6}>
+                <Grid item xs={12} sm={6} md={6}>
                     <Grid container spacing={2}>
                         <Grid item xs={12}>
                             <div className={classes.diaryTextContainer}>
-                                <Typography gutterBottom variant="h5">
+                                <Typography gutterBottom variant="h4">
                                     {diary.headline}
                                 </Typography>
-                                <Divider/>
+                                <Typography gutterBottom variant="h6">
+                                    By {diary.created_by}
+                                </Typography>
+                                <Divider />
                                 <Typography component="p">
                                     {diary.content}
                                 </Typography>

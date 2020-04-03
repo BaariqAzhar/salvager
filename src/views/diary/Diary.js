@@ -11,9 +11,9 @@ export default function Diary() {
 
     return (
         <div>
-            <NavbarSection />
             <Container>
-                <Typography variant="h4" align='center'>Diary</Typography>
+                <NavbarSection theme='dark' />
+                <Typography variant="h3" align='center'>Diary</Typography>
                 <DiaryListSection />
             </Container>
             <FooterSection />
