@@ -22,10 +22,39 @@ import ImgStar3 from '../../assets/img/star3.png'
 
 export default function Products() {
     const classes = useStyles();
+
+    const [hasError, setErrors] = useState(false);
+    const [products, setProducts] = useState({})
+
+    async function fetchData() {
+        const res = await fetch("salvagerapi.salvagerindonesia.com/api/v1/products/?format=json")
+        const products = await res.json()
+        // const [item] = products;
+        // console.log(products);
+        setProducts(products);
+    }
+
+    console.log(products)
+    // var productsList = products.map((product) => {
+    //     return (
+    //         <div key={product.toString()}>
+    //             {/* <ItemProduct2 product={product} /> */}
+    //         </div>
+    //     )
+    // })
+
+    useEffect(() => {
+        fetchData();
+    }, []);
+
     return (
         <div className={classes.firstDiv}>
             <Container>
-                {console.log('asd')}
+                {/* {productsList} */}
+                {/* {console.log(products.name)} */}
+                {/* {console.log(products.map((product) => {
+                    product.name
+                }))} */}
                 <NavbarSection theme='dark' />
                 <Grid container>
                     <Grid item xs={6} sm={4}>
@@ -80,6 +109,37 @@ const useStyles = makeStyles(theme => ({
     link: {
     }
 }));
+
+function ItemProduct2(props) {
+    const classes = useStyles();
+    const product = props.product;
+    const Star = product.rating;
+    console.log(product.rating)
+    // let StarImg;
+    // switch (props.star) {
+    //     case '5':
+    //         StarImg = ImgStar5
+    //         break;
+    //     case '4':
+    //         StarImg = ImgStar4
+    //         break;
+    //     case '3':
+    //         StarImg = ImgStar3
+    //         break;
+    // }
+    // return (
+    //     <div>
+    //         <Link to={props.link} className={classes.link} style={{ textDecoration: 'none' }}>
+    //             <img className={classes.imgProducts} src={props.product} />
+    //             <Typography variant="h4" gutterBottom align='center'>
+    //                 {props.name} </Typography>
+    //             <img className={classes.imgStar} src={StarImg} />
+    //             <Typography variant="subtitle1" gutterBottom align='center'>
+    //                 {props.price} </Typography>
+    //         </Link>
+    //     </div>
+    // )
+}
 
 function ItemProduct(props) {
     const classes = useStyles();
