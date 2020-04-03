@@ -94,13 +94,16 @@ export default function FooterSection() {
                 </Grid>
                 <Grid item xs={12} sm={3}>
                     <div>
-                        <img src={letterIcon} className={classes.letterIcon}/>
+                        <img src={letterIcon} className={classes.letterIcon} />
                         <Typography display="inline" variant="subtitle1" gutterBottom className={classes.text}>
                             Join our mailing list
                         </Typography>
                     </div>
                     <form >
                         <TextField className={classes.letter} placeholder="your email" />
+                        <br/>
+                        <Button className={classes.button} variant="contained">
+                            Send </Button>
                     </form>
                 </Grid>
             </Grid>
@@ -133,10 +136,15 @@ const useStyles = makeStyles(theme => ({
     letter: {
         backgroundColor: 'white',
         paddingLeft: '1em',
-        borderRadius: '15px',
+        // borderRadius: '15px',
         marginTop: '1em'
     },
     letterIcon: {
         marginRight: '1em'
-    }
+    },
+    button: {
+        backgroundColor: '#DCE2E2 ',
+        color: 'black',
+        marginTop: '1em',
+    },
 }));
