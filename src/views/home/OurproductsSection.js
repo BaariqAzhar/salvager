@@ -1,6 +1,6 @@
 import React from 'react';
-// import logo from './logo.svg';
-// import './App.css';
+import { Router, Route, Switch, Link } from 'react-router-dom';
+
 import JumbotronSection from './JumbotronSection';
 import VideoSection from './VideoSection';
 
@@ -23,7 +23,6 @@ import ImgProducts5 from '../../assets/img/p5.png'
 import ImgStar5 from '../../assets/img/star5.png'
 import ImgStar4 from '../../assets/img/star4.png'
 import ImgStar3 from '../../assets/img/star3.png'
-import { Link } from '@material-ui/core';
 
 export default function OurproductsSection() {
   const classes = useStyles();
@@ -34,37 +33,25 @@ export default function OurproductsSection() {
         Our Products </Typography>
       <Grid container>
         <Grid item xs={4} sm={2}>
-          <Link style={{ textDecoration: 'none' }} className={classes.viewLink}>
-            <ItemProduct name='Dummy Text' star='5' price='Rp 300.000' product={ImgProducts1} />
-          </Link>
+          <ItemProduct link='/products' name='Dummy Text' star='5' price='Rp 300.000' product={ImgProducts1} />
         </Grid>
         <Grid item xs={4} sm={2}>
-          <Link style={{ textDecoration: 'none' }} className={classes.viewLink}>
-            <ItemProduct name='Dummy Text' star='5' price='Rp 300.000' product={ImgProducts2} />
-          </Link>
+            <ItemProduct link='/products' name='Dummy Text' star='5' price='Rp 300.000' product={ImgProducts2} />
         </Grid>
         <Grid item xs={4} sm={2}>
-          <Link style={{ textDecoration: 'none' }} className={classes.viewLink}>
-            <ItemProduct name='Dummy Text' star='5' price='Rp 300.000' product={ImgProducts3} />
-          </Link>
+            <ItemProduct link='/products' name='Dummy Text' star='5' price='Rp 300.000' product={ImgProducts3} />
         </Grid>
         <Grid item xs={4} sm={2}>
-          <Link style={{ textDecoration: 'none' }} className={classes.viewLink}>
-            <ItemProduct name='Dummy Text' star='5' price='Rp 300.000' product={ImgProducts4} />
-          </Link>
+            <ItemProduct link='/products' name='Dummy Text' star='5' price='Rp 300.000' product={ImgProducts4} />
         </Grid>
         <Grid item xs={4} sm={2}>
-          <Link style={{ textDecoration: 'none' }} className={classes.viewLink}>
-            <ItemProduct name='Dummy Text' star='5' price='Rp 300.000' product={ImgProducts5} />
-          </Link>
+            <ItemProduct link='/products' name='Dummy Text' star='5' price='Rp 300.000' product={ImgProducts5} />
         </Grid>
         <Grid item xs={4} sm={2}>
-          <Link style={{ textDecoration: 'none' }} className={classes.viewLink}>
-            <ItemProduct name='Dummy Text' star='5' price='Rp 300.000' product={ImgProducts3} />
-          </Link>
+            <ItemProduct link='/products' name='Dummy Text' star='5' price='Rp 300.000' product={ImgProducts3} />
         </Grid>
       </Grid>
-    </div>
+    </div >
   )
 }
 
@@ -79,12 +66,6 @@ const useStyles = makeStyles(theme => ({
   viewButton: {
     textTransform: 'none',
     margin: '0%'
-  },
-  viewLink: {
-    textTransform: 'none',
-    margin: '0%',
-    textDecoration: 'none',
-    textDecoration: 'none'
   },
   title: {
     marginTop: '5%'
@@ -117,12 +98,16 @@ function ItemProduct(props) {
   }
   return (
     <div>
-      <img className={classes.imgProducts} src={props.product} />
-      <Typography variant="h6" gutterBottom align='center'>
-        {props.name} </Typography>
-      <img className={classes.imgStar} src={StarImg} />
-      <Typography variant="subtitle1" gutterBottom align='center'>
-        {props.price} </Typography>
+      {/* <Button> */}
+        <Link to={props.link} style={{ textDecoration: 'none' }}>
+          <Button><img className={classes.imgProducts} src={props.product} /></Button>
+          <Typography variant="h6" gutterBottom align='center'>
+            {props.name} </Typography>
+          <img className={classes.imgStar} src={StarImg} />
+          <Typography variant="subtitle1" gutterBottom align='center'>
+            {props.price} </Typography>
+        </Link>
+      {/* </Button> */}
     </div>
   )
 }

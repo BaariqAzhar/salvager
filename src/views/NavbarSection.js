@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 // import logo from './logo.svg';
 // import './App.css';
@@ -18,6 +18,17 @@ import { Router, Route, Switch, Link } from 'react-router-dom';
 let Color;
 
 export default function NavbarSection(props) {
+
+    let isMobile = false;
+    if (window.innerWidth >= 1280) {
+        isMobile = false;
+        console.log('ini desktop')
+    } else {
+        isMobile = true;
+        console.log('ini mobile')
+    }
+    console.log(window.innerWidth)
+
     const classes = useStyles();
     let Logo;
     // let Color;
@@ -31,7 +42,7 @@ export default function NavbarSection(props) {
             Color = 'white';
             break;
     }
-    if(props.logo === 'off'){
+    if (props.logo === 'off') {
         Logo = '';
     }
 
@@ -46,11 +57,11 @@ export default function NavbarSection(props) {
                     </Grid>
                     <Grid item xs={12} sm={6}>
                         <Toolbar>
-                            <Link style={{color: Color}} className={classes.link} to='/' color="inherit">HOME</Link>
-                            <Link style={{color: Color}} className={classes.link} to='/story' color="inherit">STORY</Link>
-                            <Link style={{color: Color}} className={classes.link} to='/products' color="inherit">PRODUCTS</Link>
-                            <Link style={{color: Color}} className={classes.link} to='/diary' color="inherit">DIARY</Link>
-                            <Link style={{color: Color}} className={classes.link} to='/contact' color="inherit">CONTACT</Link>
+                            <Button><Link style={{ color: Color }} className={classes.link} to='/' color="inherit">HOME</Link></Button>
+                            <Button><Link style={{ color: Color }} className={classes.link} to='/story' color="inherit">STORY</Link></Button>
+                            <Button><Link style={{ color: Color }} className={classes.link} to='/products' color="inherit">PRODUCTS</Link></Button>
+                            <Button><Link style={{ color: Color }} className={classes.link} to='/diary' color="inherit">DIARY</Link></Button>
+                            <Button><Link style={{ color: Color }} className={classes.link} to='/contact' color="inherit">CONTACT</Link></Button>
                         </Toolbar>
                     </Grid>
                 </Grid>

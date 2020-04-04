@@ -35,16 +35,32 @@ export default function FindusSection() {
             </div>
             <Grid container>
                 <Grid item xs={6} sm={3}>
-                    <img className={classes.igPhoto} src={igPhoto2} />
+                    <Button>
+                        <Link>
+                            <img className={classes.igPhoto} src={igPhoto2} />
+                        </Link>
+                    </Button>
                 </Grid>
                 <Grid item xs={6} sm={3}>
-                    <img className={classes.igPhoto} src={igPhoto1} />
+                    <Button>
+                        <Link>
+                            <img className={classes.igPhoto} src={igPhoto1} />
+                        </Link>
+                    </Button>
                 </Grid>
                 <Grid item xs={6} sm={3}>
-                    <img className={classes.igPhoto} src={igPhoto3} />
+                    <Button>
+                        <Link>
+                            <img className={classes.igPhoto} src={igPhoto3} />
+                        </Link>
+                    </Button>
                 </Grid>
                 <Grid item xs={6} sm={3}>
-                    <img className={classes.igPhoto} src={igPhoto4} />
+                    <Button>
+                        <Link>
+                            <img className={classes.igPhoto} src={igPhoto4} />
+                        </Link>
+                    </Button>
                 </Grid>
             </Grid>
             <div align='center' className={classes.title}>
