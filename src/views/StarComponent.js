@@ -29,6 +29,24 @@ export default function StarComponent(props) {
         case '0':
             ImgStar = ImgStar0
             break;
+        case 5:
+            ImgStar = ImgStar5
+            break;
+        case 4:
+            ImgStar = ImgStar4
+            break;
+        case 3:
+            ImgStar = ImgStar3
+            break;
+        case 2:
+            ImgStar = ImgStar2
+            break;
+        case 1:
+            ImgStar = ImgStar1
+            break;
+        case 0:
+            ImgStar = ImgStar0
+            break;
         default:
             ImgStar = ImgStar5
             break;
