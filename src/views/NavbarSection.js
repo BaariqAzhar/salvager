@@ -44,7 +44,7 @@ export default function NavbarSection(props) {
                     <Grid item xs={12} sm={6}>
                         <Toolbar>
                             <Link style={{color: Color}} className={classes.link} to='/' color="inherit">HOME</Link>
-                            <Link style={{color: Color}} className={classes.link} to='/products' color="inherit">STORY</Link>
+                            <Link style={{color: Color}} className={classes.link} to='/story' color="inherit">STORY</Link>
                             <Link style={{color: Color}} className={classes.link} to='/products' color="inherit">PRODUCTS</Link>
                             <Link style={{color: Color}} className={classes.link} to='/diary' color="inherit">DIARY</Link>
                             <Link style={{color: Color}} className={classes.link} to='/contact' color="inherit">CONTACT</Link>
