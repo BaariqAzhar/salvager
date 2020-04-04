@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 // import logo from './logo.svg';
 // import './App.css';
 import JumbotronSection from '../home/JumbotronSection';
@@ -7,9 +7,10 @@ import OurproductsSection from '../home/OurproductsSection';
 import FindusSection from '../home/FindusSection';
 import FooterSection from '../home/FooterSection'
 import StarComponent from '../StarComponent';
+import NavbarSection from '../NavbarSection';
 
+import { Button } from '@material-ui/core';
 import { makeStyles, withTheme } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
 import HomeBackgroundImage from '../../assets/img/home-background.png'
 import '../../assets/css/home.css'
 import Grid from '@material-ui/core/Grid';
@@ -19,12 +20,24 @@ import Container from '@material-ui/core/Container';
 import ImgPattern from '../../assets/img/pattern.png'
 import ImgVideo from '../../assets/img/video.png'
 
+import PropTypes from 'prop-types';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+import Slide from '@material-ui/core/Slide';
 
-export default function Home() {
+export default function Home(props) {
+
   const classes = useStyles();
 
   return (
     <div className={classes.firstDiv}>
+      <HideOnScroll {...props}>
+        <AppBar elevation={0} className={classes.bgWhite}>
+          <NavbarSection theme='light' />
+        </AppBar>
+      </HideOnScroll>
       <JumbotronSection />
       <div className={classes.secondDiv}>
         <VideoSection />
@@ -37,6 +50,9 @@ export default function Home() {
 }
 
 const useStyles = makeStyles(theme => ({
+  bgWhite: {
+    backgroundColor: 'transparent'
+  },
   root: {
     '& > *': {
       margin: theme.spacing(1),
@@ -72,3 +88,28 @@ const useStyles = makeStyles(theme => ({
     marginRight: '1rem'
   }
 }));
+
+
+function HideOnScroll(props) {
+  const { children, window } = props;
+  // Note that you normally won't need to set the window ref as useScrollTrigger
+  // will default to window.
+  // This is only being set here because the demo is in an iframe.
+  const trigger = useScrollTrigger({ target: window ? window() : undefined });
+
+  return (
+    <Slide appear={false} direction="down" in={!trigger}>
+      {children}
+    </Slide>
+  );
+}
+
+HideOnScroll.propTypes = {
+  children: PropTypes.element.isRequired,
+  /**
+   * Injected by the documentation to work in an iframe.
+   * You won't need it on your project.
+   */
+  window: PropTypes.func,
+};
+

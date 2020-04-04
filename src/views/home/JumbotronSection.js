@@ -27,7 +27,7 @@ export default function JumbotronSection() {
         <div>
             <div className={classes.firstContainer}>
                 <Container>
-                    <NavbarSection theme="light" />
+                    {/* <NavbarSection theme="light" /> */}
                     <Grid container>
                         <Grid item  className={classes.descriptionBackground} item xs={12} sm={6}>
                             <Typography className={classes.descriptionText}  variant="h5" gutterBottom>
