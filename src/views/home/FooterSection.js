@@ -1,7 +1,7 @@
 import React from 'react';
 // import logo from './logo.svg';
 // import './App.css';
-
+import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -85,8 +85,10 @@ export default function FooterSection() {
                         </div>
                         <div className={classes.listSocialMedia}>
                             <Typography display="inline" variant="subtitle2" gutterBottom className={classes.text}>
-                                Term &amp; Condition
-                        </Typography>
+                                <Link to="/policy" color="inherit">
+                                    Terms &amp; Condition
+                                </Link>
+                            </Typography>
                         </div>
                         <div className={classes.listSocialMedia}>
                             <Typography display="inline" variant="subtitle2" gutterBottom className={classes.text}>

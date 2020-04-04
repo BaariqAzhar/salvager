@@ -13,6 +13,7 @@ import ProductDetail from '../src/views/products/ProductDetail';
 import Diary from '../src/views/diary/Diary';
 import Contact from '../src/views/contact/Contact';
 import Story from '../src/views/story/Story';
+import Terms from '../src/views/terms/Terms';
 import Coba from '../src/views/Coba'
 
 var hist = createBrowserHistory();
@@ -25,6 +26,7 @@ ReactDOM.render(
             <Route path="/diary" component={Diary} />
             <Route path="/contact" component={Contact} />
             <Route path="/story" component={Story} />
+            <Route path="/policy" component={Terms} />
             <Route path="" component={Home} />
         </Switch>
     </Router>,
