@@ -34,34 +34,34 @@ export default function OurproductsSection() {
         Our Products </Typography>
       <Grid container>
         <Grid item xs={4} sm={2}>
-        <Button className={classes.viewButton}>
+          <Link style={{ textDecoration: 'none' }} className={classes.viewLink}>
             <ItemProduct name='Dummy Text' star='5' price='Rp 300.000' product={ImgProducts1} />
-          </Button>
+          </Link>
         </Grid>
         <Grid item xs={4} sm={2}>
-          <Button className={classes.viewButton}>
+          <Link style={{ textDecoration: 'none' }} className={classes.viewLink}>
             <ItemProduct name='Dummy Text' star='5' price='Rp 300.000' product={ImgProducts2} />
-          </Button>
+          </Link>
         </Grid>
         <Grid item xs={4} sm={2}>
-        <Button className={classes.viewButton}>
+          <Link style={{ textDecoration: 'none' }} className={classes.viewLink}>
             <ItemProduct name='Dummy Text' star='5' price='Rp 300.000' product={ImgProducts3} />
-          </Button>
+          </Link>
         </Grid>
         <Grid item xs={4} sm={2}>
-        <Button className={classes.viewButton}>
+          <Link style={{ textDecoration: 'none' }} className={classes.viewLink}>
             <ItemProduct name='Dummy Text' star='5' price='Rp 300.000' product={ImgProducts4} />
-          </Button>
+          </Link>
         </Grid>
         <Grid item xs={4} sm={2}>
-        <Button className={classes.viewButton}>
+          <Link style={{ textDecoration: 'none' }} className={classes.viewLink}>
             <ItemProduct name='Dummy Text' star='5' price='Rp 300.000' product={ImgProducts5} />
-          </Button>
+          </Link>
         </Grid>
         <Grid item xs={4} sm={2}>
-        <Button className={classes.viewButton}>
+          <Link style={{ textDecoration: 'none' }} className={classes.viewLink}>
             <ItemProduct name='Dummy Text' star='5' price='Rp 300.000' product={ImgProducts3} />
-          </Button>
+          </Link>
         </Grid>
       </Grid>
     </div>
@@ -79,6 +79,12 @@ const useStyles = makeStyles(theme => ({
   viewButton: {
     textTransform: 'none',
     margin: '0%'
+  },
+  viewLink: {
+    textTransform: 'none',
+    margin: '0%',
+    textDecoration: 'none',
+    textDecoration: 'none'
   },
   title: {
     marginTop: '5%'
