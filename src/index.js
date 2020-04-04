@@ -9,7 +9,7 @@ import { Router, Route, Switch } from 'react-router-dom';
 
 import Home from '../src/views/home/Home';
 import Products from '../src/views/products/Products';
-import Products2 from '../src/views/products/Products2';
+import ProductDetail from '../src/views/products/ProductDetail';
 import Diary from '../src/views/diary/Diary';
 import Contact from '../src/views/contact/Contact';
 import Story from '../src/views/story/Story';
@@ -21,7 +21,7 @@ ReactDOM.render(
         <Switch>
             <Route path="/coba" component={Coba} />
             <Route path="/products" component={Products} />
-            <Route path="/products2" component={Products2} />
+            <Route path="/product/:id" component={ProductDetail} />
             <Route path="/diary" component={Diary} />
             <Route path="/contact" component={Contact} />
             <Route path="/story" component={Story} />
