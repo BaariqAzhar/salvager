@@ -11,6 +11,8 @@ import InstagramIcon from '../../assets/img/instagram.png'
 import igPhoto1 from '../../assets/img/ig1.png'
 import igPhoto2 from '../../assets/img/ig2.png'
 import igPhoto3 from '../../assets/img/ig3.png'
+import igPhoto4 from '../../assets/img/ig4.png'
+
 import bunnyIcon from '../../assets/img/bunny.png'
 
 import '../../assets/css/home.css'
@@ -32,14 +34,17 @@ export default function FindusSection() {
                 <img display="inline" src={InstagramIcon} />
             </div>
             <Grid container>
-                <Grid item xs={12} sm={4}>
+                <Grid item xs={6} sm={3}>
                     <img className={classes.igPhoto} src={igPhoto2} />
                 </Grid>
-                <Grid item xs={12} sm={4}>
+                <Grid item xs={6} sm={3}>
                     <img className={classes.igPhoto} src={igPhoto1} />
                 </Grid>
-                <Grid item xs={12} sm={4}>
+                <Grid item xs={6} sm={3}>
                     <img className={classes.igPhoto} src={igPhoto3} />
+                </Grid>
+                <Grid item xs={6} sm={3}>
+                    <img className={classes.igPhoto} src={igPhoto4} />
                 </Grid>
             </Grid>
             <div align='center' className={classes.title}>
