@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { makeStyles } from '@material-ui/core/styles';
 import ImgStar5 from '../assets/img/star5.png'
 import ImgStar4 from '../assets/img/star4.png'
 import ImgStar3 from '../assets/img/star3.png'
@@ -8,6 +8,7 @@ import ImgStar1 from '../assets/img/star1.png'
 import ImgStar0 from '../assets/img/star0.png'
 
 export default function StarComponent(props) {
+    const classes = useStyles(props);
     let ImgStar;
     switch (props.star) {
         case '5':
@@ -28,8 +29,22 @@ export default function StarComponent(props) {
         case '0':
             ImgStar = ImgStar0
             break;
+        default:
+            ImgStar = ImgStar5
+            break;
     }
     return (
-        <img src={ImgStar} />
+        <img src={ImgStar} className={classes.star} />
     )
 }
+
+const useStyles = makeStyles(theme => ({
+    productTitle: {
+        alignItems: 'center',
+        marginTop: '1rem'
+    },
+    star: props => ({
+        height: props.size,
+        width: props.size
+    })
+}));
