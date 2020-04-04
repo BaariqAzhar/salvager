@@ -31,6 +31,9 @@ export default function NavbarSection(props) {
             Color = 'white';
             break;
     }
+    if(props.logo === 'off'){
+        Logo = '';
+    }
 
     return (
         <div>
