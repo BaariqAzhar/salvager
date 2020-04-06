@@ -20,6 +20,9 @@ import {
     Link
 } from "react-router-dom";
 
+let heightDevice = window.innerHeight;
+let marginDescription = window.innerHeight * 0.5 + 'px';
+
 export default function JumbotronSection() {
     const classes = useStyles();
 
@@ -28,9 +31,9 @@ export default function JumbotronSection() {
             <div className={classes.firstContainer}>
                 <Container>
                     {/* <NavbarSection theme="light" /> */}
-                    <Grid container>
-                        <Grid item  className={classes.descriptionBackground} item xs={12} sm={6}>
-                            <Typography className={classes.descriptionText}  variant="h5" gutterBottom>
+                    <Grid container >
+                        <Grid item item xs={12} sm={6} className={classes.descriptionBackground}>
+                            <Typography className={classes.descriptionText} variant="h5" gutterBottom>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </Typography>
                             <Button className={classes.button} variant="contained">
                                 Find Out </Button>
@@ -45,25 +48,9 @@ export default function JumbotronSection() {
 }
 
 const useStyles = makeStyles(theme => ({
-    // root: {
-    //     '& > *': {
-    //         margin: theme.spacing(1),
-    //     },
-    // },
-    // backgroundImage: {
-    //     width: '100%',
-    //     position: 'absolute',
-    //     backgroundBlendMode: 'luminosity',
-    //     backgroundSize: 'cover',
-    //     top: 0,
-    //     left: 0,
-    //     right: 0,
-    //     bottom: 0,
-    //     zIndex: -1,
-    // },
     descriptionBackground: {
-        marginTop: '40%',
-        marginBottom: '10%',
+        // marginBottom: '10%',
+        marginTop: marginDescription,
         color: 'white',
     },
     descriptionText: {
@@ -77,6 +64,6 @@ const useStyles = makeStyles(theme => ({
     firstContainer: {
         backgroundImage: `url(${HomeBackgroundImage})`,
         backgroundSize: 'cover',
-        height: '100%'
+        height: heightDevice,
     },
 }));
