@@ -85,8 +85,8 @@ export default function FooterSection() {
                         </div>
                         <div className={classes.listSocialMedia}>
                             <Typography display="inline" variant="subtitle2" gutterBottom className={classes.text}>
-                                <Link to="/policy" color="inherit">
-                                    Terms &amp; Condition
+                                <Link to="/policy" className={classes.link} color="inherit">
+                                    Policy
                                 </Link>
                             </Typography>
                         </div>
@@ -154,5 +154,8 @@ const useStyles = makeStyles(theme => ({
     },
     gridItem: {
         marginBottom: '1rem'
+    },
+    link: {
+        color: 'white'
     }
 }));

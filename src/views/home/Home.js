@@ -39,11 +39,11 @@ export default function Home(props) {
         </AppBar>
       </HideOnScroll>
       <JumbotronSection />
-      <div className={classes.secondDiv}>
+      <Container>
         <VideoSection />
         <OurproductsSection />
         <FindusSection />
-      </div>
+      </Container>
       <FooterSection />
     </div>
   )
@@ -83,10 +83,10 @@ const useStyles = makeStyles(theme => ({
     backgroundImage: `url(${ImgPattern})`,
     backgroundSize: 'cover',
   },
-  secondDiv: {
-    marginLeft: '1rem',
-    marginRight: '1rem'
-  }
+  // secondDiv: {
+  //   marginLeft: '1rem',
+  //   marginRight: '1rem'
+  // }
 }));
 
 
