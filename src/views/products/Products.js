@@ -66,6 +66,7 @@ const useStyles = makeStyles(theme => ({
     firstDiv: {
         backgroundImage: `url(${ImgPattern})`,
         backgroundSize: 'cover',
+        paddingTop: '5rem',
     },
     productImg: {
         width: '100%'

@@ -29,7 +29,7 @@ export default function Contact() {
         <Grid className={classes.firstDiv}>
             <Container>
                 <NavbarSection theme='dark' />
-                <Typography variant="h3" align='center'>Diary</Typography>
+                <Typography variant="h3" align='center'>Contact</Typography>
                 <div align='center' className={classes.list}>
                     <img src={ImgWhatsapp} />
                     <Typography className={classes.listText} display="inline" variant="h6" gutterBottom align="center">
@@ -110,6 +110,7 @@ const useStyles = makeStyles(theme => ({
     firstDiv: {
         backgroundImage: `url(${ImgPattern})`,
         backgroundSize: 'cover',
+        paddingTop: '5rem',
     },
     content: {
         marginTop: '2rem'

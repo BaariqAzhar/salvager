@@ -126,7 +126,10 @@ const useStyles = makeStyles(theme => ({
     whiteLogo: {
         width: '80%',
         marginTop: 'auto',
-        marginBottom: 'auto'
+        marginBottom: 'auto',
+        display: 'block',
+        marginLeft: 'auto',
+        marginRight: 'auto',
     },
     icon: {
         width: '2em',

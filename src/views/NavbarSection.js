@@ -25,8 +25,16 @@ import ListItemText from '@material-ui/core/ListItemText';
 import IconBurgerButton from '../assets/img/burgerBtn.png'
 import IconBlackBurgerButton from '../assets/img/burgerBtnBlack.png'
 
+import PropTypes from 'prop-types';
+// import AppBar from '@material-ui/core/AppBar';
+// import Toolbar from '@material-ui/core/Toolbar';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+import Slide from '@material-ui/core/Slide';
+
 let Color;
 
+{/* <NavbarSection theme='light' /> */ }
 export default function NavbarSection(props) {
 
     let isMobile = false;
@@ -85,23 +93,23 @@ export default function NavbarSection(props) {
         >
             <List>
                 <ListItem>
-                    <Button><Link to='/' color="inherit">HOME</Link></Button>
+                    <Button><Link to='/' className={classes.linkMobile} color="inherit">HOME</Link></Button>
                 </ListItem>
                 <Divider />
                 <ListItem>
-                    <Button><Link to='/story' color="inherit">STORY</Link></Button>
+                    <Button><Link to='/story' className={classes.linkMobile} color="inherit">STORY</Link></Button>
                 </ListItem>
                 <Divider />
                 <ListItem>
-                    <Button><Link to='/products' color="inherit">PRODUCTS</Link></Button>
+                    <Button><Link to='/products' className={classes.linkMobile} color="inherit">PRODUCTS</Link></Button>
                 </ListItem>
                 <Divider />
                 <ListItem>
-                    <Button><Link to='/diary' color="inherit">DIARY</Link></Button>
+                    <Button><Link to='/diary' className={classes.linkMobile} color="inherit">DIARY</Link></Button>
                 </ListItem>
                 <Divider />
                 <ListItem>
-                    <Button><Link to='/contact' color="inherit">CONTACT</Link></Button>
+                    <Button><Link to='/contact' className={classes.linkMobile} color="inherit">CONTACT</Link></Button>
                 </ListItem>
             </List>
         </div>
@@ -111,50 +119,63 @@ export default function NavbarSection(props) {
     if (isMobile) {
         return (
             <div>
-                {['left'].map(anchor => (
-                    <React.Fragment key={anchor}>
-                        <Button className={classes.mobileBurgerButton} onClick={toggleDrawer(anchor, true)}>
-                            {/* {anchor} */}
-                            <img src={IconBurger} />
-                        </Button>
-                        <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
-                            {list(anchor)}
-                        </Drawer>
-                    </React.Fragment>
-                ))}
-                <img className={classes.mobileLogo} src={Logo} disply='inline' />
+                <HideOnScroll {...props}>
+                    <AppBar elevation={0} className={classes.bgTransparent}>
+                        <div position="static" className={classes.navbar}>
+
+                            {['left'].map(anchor => (
+                                <React.Fragment key={anchor}>
+                                    <Button className={classes.mobileBurgerButton} onClick={toggleDrawer(anchor, true)}>
+                                        {/* {anchor} */}
+                                        <img src={IconBurger} />
+                                    </Button>
+                                    <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
+                                        {list(anchor)}
+                                    </Drawer>
+                                </React.Fragment>
+                            ))}
+                            <img className={classes.mobileLogo} src={Logo} disply='inline' />
+                        </div>
+                    </AppBar>
+                </HideOnScroll>
             </div>
         )
     } else {
         return (
             <div>
-                <div position="static" className={classes.navbar}>
-                    <Container>
-                        <Grid container>
-                            <Grid item xs={12} sm={6}>
-                                <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                                    <img className={classes.logo} src={Logo} />
-                                </IconButton>
-                            </Grid>
-                            <Grid item xs={12} sm={6}>
-                                <Toolbar>
-                                    <Button><Link style={{ color: Color }} className={classes.link} to='/' color="inherit">HOME</Link></Button>
-                                    <Button><Link style={{ color: Color }} className={classes.link} to='/story' color="inherit">STORY</Link></Button>
-                                    <Button><Link style={{ color: Color }} className={classes.link} to='/products' color="inherit">PRODUCTS</Link></Button>
-                                    <Button><Link style={{ color: Color }} className={classes.link} to='/diary' color="inherit">DIARY</Link></Button>
-                                    <Button><Link style={{ color: Color }} className={classes.link} to='/contact' color="inherit">CONTACT</Link></Button>
-                                </Toolbar>
-                            </Grid>
-                        </Grid>
-                    </Container>
-                </div>
+                <HideOnScroll {...props}>
+                    <AppBar elevation={0} className={classes.bgTransparent}>
+                        <div position="static" className={classes.navbar}>
+                            <Container>
+                                <Grid container>
+                                    <Grid item xs={12} sm={6}>
+                                        <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+                                            <img className={classes.logo} src={Logo} />
+                                        </IconButton>
+                                    </Grid>
+                                    <Grid item xs={12} sm={6}>
+                                        <Toolbar>
+                                            <Button><Link style={{ color: Color }} className={classes.link} to='/' color="inherit">HOME</Link></Button>
+                                            <Button><Link style={{ color: Color }} className={classes.link} to='/story' color="inherit">STORY</Link></Button>
+                                            <Button><Link style={{ color: Color }} className={classes.link} to='/products' color="inherit">PRODUCTS</Link></Button>
+                                            <Button><Link style={{ color: Color }} className={classes.link} to='/diary' color="inherit">DIARY</Link></Button>
+                                            <Button><Link style={{ color: Color }} className={classes.link} to='/contact' color="inherit">CONTACT</Link></Button>
+                                        </Toolbar>
+                                    </Grid>
+                                </Grid>
+                            </Container>
+                        </div>
+                    </AppBar>
+                </HideOnScroll>
             </div>
         )
     }
 }
 
 const useStyles = makeStyles(theme => ({
-
+    bgTransparent: {
+        backgroundColor: 'transparent'
+    },
     list: {
         width: 250,
     },
@@ -197,5 +218,32 @@ const useStyles = makeStyles(theme => ({
         // color: Color,
         fontWeight: 'bold',
         margin: '1rem'
+    },
+    linkMobile: {
+        color: 'black',
     }
 }));
+
+function HideOnScroll(props) {
+    const { children, window } = props;
+    // Note that you normally won't need to set the window ref as useScrollTrigger
+    // will default to window.
+    // This is only being set here because the demo is in an iframe.
+    const trigger = useScrollTrigger({ target: window ? window() : undefined });
+
+    return (
+        <Slide appear={false} direction="down" in={!trigger}>
+            {children}
+        </Slide>
+    );
+}
+
+HideOnScroll.propTypes = {
+    children: PropTypes.element.isRequired,
+    /**
+     * Injected by the documentation to work in an iframe.
+     * You won't need it on your project.
+     */
+    window: PropTypes.func,
+};
+

@@ -6,11 +6,13 @@ import DiaryListSection from './DiaryListSection';
 import FooterSection from '../home/FooterSection';
 import { Container } from '@material-ui/core';
 
+import ImgPattern from '../../assets/img/pattern2.png'
+
 export default function Diary() {
     const classes = useStyles();
 
     return (
-        <div>
+        <div className={classes.firstDiv}>
             <Container>
                 <NavbarSection theme='dark' />
                 <Typography variant="h3" align='center'>Diary</Typography>
@@ -22,10 +24,10 @@ export default function Diary() {
 }
 
 const useStyles = makeStyles(theme => ({
-    root: {
-        '& > *': {
-            margin: theme.spacing(1),
-        },
+    firstDiv: {
+        backgroundImage: `url(${ImgPattern})`,
+        backgroundSize: 'cover',
+        paddingTop: '5rem',
     },
     diaryTitle: {
         alignItems: 'center',
