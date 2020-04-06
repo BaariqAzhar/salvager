@@ -6,12 +6,15 @@ import Typography from '@material-ui/core/Typography';
 
 import StarComponent from './StarComponent';
 
+{/* <ItemProductComponent link={'/products'} name={'Dummy Text'} star={'4'} starSize={'1em'} price={'Rp 300.000'} product={ImgProducts3} /> */ }
 export default function ItemProductComponent(props) {
     const classes = useStyles();
     return (
-        <div>
+        <div className={classes.firstDiv}>
             <Link to={props.link} style={{ textDecoration: 'none' }}>
-                <Button><img className={classes.imgProducts} src={props.product} /></Button>
+                {/* <Button> */}
+                <img className={classes.imgProducts} src={props.product} />
+                {/* </Button> */}
                 <Typography variant="h6" gutterBottom align='center'>
                     {props.name} </Typography>
                 <StarComponent star={props.star} size={props.starSize} />
@@ -23,9 +26,15 @@ export default function ItemProductComponent(props) {
 }
 
 const useStyles = makeStyles(theme => ({
-    viewButton: {
-        // textTransform: 'none',
-        // margin: '0%'
+    imgProducts: {
+        display: 'block',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        width: '1px',
+        marginTop: '50rem',
+        '&:hover': {
+            background: "#00000",
+        },
     },
     title: {
         marginTop: '5%'
@@ -33,4 +42,7 @@ const useStyles = makeStyles(theme => ({
     imgProducts: {
         width: '100%'
     },
+    firstDiv: {
+        margin: '1em'
+    }
 }));
