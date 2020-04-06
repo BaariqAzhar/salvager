@@ -7,6 +7,8 @@ import ImgStar2 from '../assets/img/star2.png'
 import ImgStar1 from '../assets/img/star1.png'
 import ImgStar0 from '../assets/img/star0.png'
 
+{/* <StarComponent star={'3'} size={'1em'} /> */}
+
 export default function StarComponent(props) {
     const classes = useStyles(props);
     let ImgStar;
@@ -57,12 +59,11 @@ export default function StarComponent(props) {
 }
 
 const useStyles = makeStyles(theme => ({
-    productTitle: {
-        alignItems: 'center',
-        marginTop: '1rem'
-    },
     star: props => ({
         height: props.size,
-        width: props.size
+        // width: props.size,
+        display: 'block',
+        marginLeft: 'auto',
+        marginRight: 'auto',
     })
 }));

@@ -20,9 +20,9 @@ import ImgProducts2 from '../../assets/img/p2.png'
 import ImgProducts3 from '../../assets/img/p3.png'
 import ImgProducts4 from '../../assets/img/p4.png'
 import ImgProducts5 from '../../assets/img/p5.png'
-import ImgStar5 from '../../assets/img/star5.png'
-import ImgStar4 from '../../assets/img/star4.png'
-import ImgStar3 from '../../assets/img/star3.png'
+
+import StarComponent from '../StarComponent';
+import ItemProductComponent from '../ItemProductComponent';
 
 export default function OurproductsSection() {
   const classes = useStyles();
@@ -31,24 +31,25 @@ export default function OurproductsSection() {
     <div>
       <Typography className={classes.title} variant="h3" gutterBottom align="center">
         Our Products </Typography>
+
       <Grid container>
         <Grid item xs={4} sm={2}>
-          <ItemProduct link='/products' name='Dummy Text' star='5' price='Rp 300.000' product={ImgProducts1} />
+          <ItemProductComponent link={'/products'} name={'Dummy Text'} star={'5'} starSize={'1em'} price={'Rp 300.000'} product={ImgProducts1} />
         </Grid>
         <Grid item xs={4} sm={2}>
-            <ItemProduct link='/products' name='Dummy Text' star='5' price='Rp 300.000' product={ImgProducts2} />
+          <ItemProductComponent link={'/products'} name={'Dummy Text'} star={'4'} starSize={'1em'} price={'Rp 300.000'} product={ImgProducts2} />
         </Grid>
         <Grid item xs={4} sm={2}>
-            <ItemProduct link='/products' name='Dummy Text' star='5' price='Rp 300.000' product={ImgProducts3} />
+          <ItemProductComponent link={'/products'} name={'Dummy Text'} star={'5'} starSize={'1em'} price={'Rp 300.000'} product={ImgProducts3} />
         </Grid>
         <Grid item xs={4} sm={2}>
-            <ItemProduct link='/products' name='Dummy Text' star='5' price='Rp 300.000' product={ImgProducts4} />
+          <ItemProductComponent link={'/products'} name={'Dummy Text'} star={'3'} starSize={'1em'} price={'Rp 300.000'} product={ImgProducts4} />
         </Grid>
         <Grid item xs={4} sm={2}>
-            <ItemProduct link='/products' name='Dummy Text' star='5' price='Rp 300.000' product={ImgProducts5} />
+          <ItemProductComponent link={'/products'} name={'Dummy Text'} star={'4'} starSize={'1em'} price={'Rp 300.000'} product={ImgProducts5} />
         </Grid>
         <Grid item xs={4} sm={2}>
-            <ItemProduct link='/products' name='Dummy Text' star='5' price='Rp 300.000' product={ImgProducts3} />
+          <ItemProductComponent link={'/products'} name={'Dummy Text'} star={'4'} starSize={'1em'} price={'Rp 300.000'} product={ImgProducts3} />
         </Grid>
       </Grid>
     </div >
@@ -64,8 +65,8 @@ const useStyles = makeStyles(theme => ({
     },
   },
   viewButton: {
-    textTransform: 'none',
-    margin: '0%'
+    // textTransform: 'none',
+    // margin: '0%'
   },
   title: {
     marginTop: '5%'
@@ -73,41 +74,20 @@ const useStyles = makeStyles(theme => ({
   imgProducts: {
     width: '100%'
   },
-  imgStar: {
-    width: '60%',
-    display: 'block',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-  }
 }));
 
 function ItemProduct(props) {
   const classes = useStyles();
-  const Star = props.star;
-  let StarImg;
-  switch (props.star) {
-    case '5':
-      StarImg = ImgStar5
-      break;
-    case '4':
-      StarImg = ImgStar4
-      break;
-    case '3':
-      StarImg = ImgStar3
-      break;
-  }
   return (
     <div>
-      {/* <Button> */}
-        <Link to={props.link} style={{ textDecoration: 'none' }}>
-          <Button><img className={classes.imgProducts} src={props.product} /></Button>
-          <Typography variant="h6" gutterBottom align='center'>
-            {props.name} </Typography>
-          <img className={classes.imgStar} src={StarImg} />
-          <Typography variant="subtitle1" gutterBottom align='center'>
-            {props.price} </Typography>
-        </Link>
-      {/* </Button> */}
+      <Link to={props.link} style={{ textDecoration: 'none' }}>
+        <Button><img className={classes.imgProducts} src={props.product} /></Button>
+        <Typography variant="h6" gutterBottom align='center'>
+          {props.name} </Typography>
+        <StarComponent star={'5'} size={'1em'} />
+        <Typography variant="subtitle1" gutterBottom align='center'>
+          {props.price} </Typography>
+      </Link>
     </div>
   )
 }
