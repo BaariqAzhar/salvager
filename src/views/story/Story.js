@@ -22,12 +22,15 @@ export default function Story() {
   return (
     <div className={classes.firstDiv}>
       <Container>
-        <NavbarSection theme='dark' logo='off'/>
-        <div align='center' className={classes.title}>
+        <NavbarSection theme='dark' logo='off' />
+        <Typography variant="h5" gutterBottom align="center">
+          about </Typography>
+        <img className={classes.imgDarkLogo} src={ImgDarkLogo} />
+        {/* <div align='center' className={classes.title}>
           <Typography display="inline" variant="h5" gutterBottom align="center">
             about </Typography>
           <img className={classes.imgDarkLogo} src={ImgDarkLogo} />
-        </div>
+        </div> */}
         <Grid container>
           <Grid item xs={12} sm={12} md={2}></Grid>
           <Grid item xs={12} sm={12} md={8}>
@@ -42,7 +45,7 @@ export default function Story() {
         <img src={ImgStory2} className={classes.imgStory} />
         <img src={ImgStory3} className={classes.imgStory} />
       </Container>
-      <FooterSection/>
+      <FooterSection />
     </div>
   )
 }
@@ -51,9 +54,9 @@ const useStyles = makeStyles(theme => ({
   firstDiv: {
     backgroundImage: `url(${ImgPattern})`,
     backgroundSize: 'cover',
+    paddingTop: '5rem',
   },
   title: {
-    marginTop: '5%',
     marginBottom: '1rem'
   },
   description: {
@@ -62,7 +65,11 @@ const useStyles = makeStyles(theme => ({
   },
   imgDarkLogo: {
     marginLeft: '2em',
-    width: '50%'
+    height: '4em',
+    display: 'block',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginBottom: '2em'
   },
   firstImgStory: {
     marginTop: '2rem',
