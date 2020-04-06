@@ -8,6 +8,7 @@ import { Link } from '@material-ui/core';
 import { emphasize } from "@material-ui/core/styles/colorManipulator";
 
 import NavbarSection from '../NavbarSection'
+import FooterSection from '../home/FooterSection'
 import ItemProductComponent from '../ItemProductComponent'
 
 import ImgPattern from '../../assets/img/pattern2.png'
@@ -59,6 +60,7 @@ export default function Products() {
                     {productList}
                 </Grid>
             </Container>
+            <FooterSection/>
         </div>
     )
 }
