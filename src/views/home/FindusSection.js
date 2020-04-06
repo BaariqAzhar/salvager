@@ -1,67 +1,55 @@
-import React from 'react';
-// import logo from './logo.svg';
-// import './App.css';
-import JumbotronSection from './JumbotronSection';
-import VideoSection from './VideoSection';
-
-import { makeStyles, withTheme } from '@material-ui/core/styles';
+import React, { useState, useEffect } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import HomeBackgroundImage from '../../assets/img/home-background.png'
 import InstagramIcon from '../../assets/img/instagram.png'
-import igPhoto1 from '../../assets/img/ig1.png'
-import igPhoto2 from '../../assets/img/ig2.png'
-import igPhoto3 from '../../assets/img/ig3.png'
-import igPhoto4 from '../../assets/img/ig4.png'
 
 import bunnyIcon from '../../assets/img/bunny.png'
 
 import '../../assets/css/home.css'
-import BackgroundImage from "react-background-image";
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
 
-import { Link } from '@material-ui/core';
 
 export default function FindusSection() {
     const classes = useStyles();
+    const [instagrams, setInstagrams] = useState([])
+
+    async function fetchInstagrams() {
+        const res = await fetch("https://salvagerapi.salvagerindonesia.com/api/v1/instagrams/?format=json")
+        const instagrams = await res.json()
+        setInstagrams(instagrams)
+        console.log(instagrams)
+    }
+
+    useEffect(() => {
+        fetchInstagrams();
+    }, []);
+
+    let instagramList = instagrams.map((instagram) => {
+
+        return <Grid item xs={12} sm={4}>
+            <Button>
+                <a href={instagram.post_url}>
+                    <img className={classes.igPhoto} src={instagram.image} />
+                </a>
+            </Button>
+        </Grid>
+    })
+
+    instagramList = instagramList.slice(Math.max(instagramList.length - 3, 0))
 
     return (
         <div>
-            <div className={classes.title} align='center' >
-                <Typography display="inline" variant="h5" gutterBottom align="center">
-                    Find us on </Typography>
-                <img display="inline" src={InstagramIcon} />
-            </div>
+            <a href='https://www.instagram.com/salvagerindonesia/' className={classes.linkInstagram} color="inherit">
+                <div className={classes.title} align='center' >
+                    <Typography display="inline" variant="h5" gutterBottom align="center">
+                        Find us on
+                    </Typography>
+                    <img display="inline" src={InstagramIcon} />
+                </div>
+            </a>
             <Grid container>
-                <Grid item xs={6} sm={3}>
-                    <Button>
-                        <Link>
-                            <img className={classes.igPhoto} src={igPhoto2} />
-                        </Link>
-                    </Button>
-                </Grid>
-                <Grid item xs={6} sm={3}>
-                    <Button>
-                        <Link>
-                            <img className={classes.igPhoto} src={igPhoto1} />
-                        </Link>
-                    </Button>
-                </Grid>
-                <Grid item xs={6} sm={3}>
-                    <Button>
-                        <Link>
-                            <img className={classes.igPhoto} src={igPhoto3} />
-                        </Link>
-                    </Button>
-                </Grid>
-                <Grid item xs={6} sm={3}>
-                    <Button>
-                        <Link>
-                            <img className={classes.igPhoto} src={igPhoto4} />
-                        </Link>
-                    </Button>
-                </Grid>
+                {instagramList}
             </Grid>
             <div align='center' className={classes.title}>
                 <img className={classes.bunnyIcon} src={bunnyIcon} />
@@ -77,7 +65,8 @@ const useStyles = makeStyles(theme => ({
         marginTop: '5%'
     },
     igPhoto: {
-        width: '100%'
+        width: '100%',
+        height: '100%'
     },
     bunnyIcon: {
         width: '3em',
