@@ -4,11 +4,13 @@ import NavbarSection from '../NavbarSection'
 import FooterSection from '../home/FooterSection';
 import { Container, Grid } from '@material-ui/core';
 
+import ImgPattern from '../../assets/img/pattern2.png'
+
 export default function Terms() {
     const classes = useStyles();
 
     return (
-        <div>
+        <div className={classes.firstDiv}>
             <Container>
                 <NavbarSection theme='dark' />
                 <Grid container>
@@ -71,5 +73,10 @@ const useStyles = makeStyles(theme => ({
         '& > *': {
             margin: theme.spacing(1),
         },
+    },
+    firstDiv: {
+        backgroundImage: `url(${ImgPattern})`,
+        backgroundSize: 'cover',
+        paddingTop: '5rem',
     },
 }));

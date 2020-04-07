@@ -21,24 +21,20 @@ export default function ReviewSection(props) {
     const classes = useStyles();
 
     return (
-        <Grid container spacing={1}>
-            <Grid item xs={12}>
-                <Typography variant='h4' align='center'>Customer Review</Typography>
-            </Grid>
-            <Grid item xs={12}>
-                <Grid container alignItems='center' align='center' spacing={2}>
-                    <Grid item xs={12} sm={6} align='right'>
-                        <div className={classes.stars}>
-                            <StarComponent star={averageStars} size={'20%'} />
-                        </div>
-                    </Grid>
-                    <Grid item xs={12} sm={6} align='left'>
-                        <Typography>Based on {reviewCount} reviews</Typography>
-                    </Grid>
+        <div className={classes.firstDiv}>
+            <Grid container>
+                <Grid item xs={12} sm={2}></Grid>
+                <Grid item xs={12} sm={8}>
+                    <Typography variant='h4' align='center'>Customer Review</Typography>
+                    <div align='center' className={classes.starBasedOn}>
+                        <StarComponent display='inline' star={averageStars} size={'2em'} />
+                        <Typography className={classes.basedOn} display='inline'>based on {reviewCount} reviews</Typography>
+                    </div>
+                    {reviewList}
                 </Grid>
+                <Grid item xs={12} sm={2}></Grid>
             </Grid>
-            {reviewList}
-        </Grid>
+        </div >
     )
 }
 
@@ -59,10 +55,24 @@ const useStyles = makeStyles(theme => ({
     content: {
         flex: '1 0 auto',
     },
-    reviewImage: {
+    review: {
+        marginTop: '3em'
     },
     reviewTextContainer: {
     },
+    firstDiv: {
+        marginTop: '3rem'
+    },
+    basedOn: {
+        marginLeft: '1rem',
+        // marginTop: '1000em'
+    },
+    starBasedOn: {
+        marginTop: '1rem'
+    },
+    shortComment: {
+        marginTop: '0.5em'
+    }
 }));
 
 function ItemReview(props) {
@@ -70,26 +80,18 @@ function ItemReview(props) {
     const review = props.review
     return (
         <div className={classes.review}>
-            <Grid container>
-                <Grid item xs={12}>
-                    <Grid container spacing={2}>
-                        <Grid item xs={12}>
-                            <div className={classes.reviewTextContainer}>
-                                <StarComponent star={review.star} size={'40%'} />
-                                <Typography gutterBottom variant="h5">
-                                    {review.headline}
-                                </Typography>
-                                <Typography gutterBottom variant="p">
-                                    from {review.username} on {review.pub_time.substring(0, 10)}
-                                </Typography>
-                                <Typography component="p">
-                                    {review.content}
-                                </Typography>
-                            </div>
-                        </Grid>
-                    </Grid>
-                </Grid>
-            </Grid>
+            <div className={classes.reviewTextContainer}>
+                <StarComponent star={review.star} size={'1.5em'} />
+                <Typography className={classes.shortComment} gutterBottom variant="h5">
+                    {review.headline}
+                </Typography>
+                <Typography gutterBottom variant="p">
+                    from {review.username} on {review.pub_time.substring(0, 10)}
+                </Typography>
+                <Typography component="p">
+                    {review.content}
+                </Typography>
+            </div>
         </div >
     )
 }

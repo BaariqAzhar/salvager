@@ -26,15 +26,16 @@ export default function OurproductsSection() {
     const starSize = '1em'
 
     console.log(imageLink)
-    return <Grid item xs={4} sm={2}>
+    return <Grid item xs={6} sm={2}>
       <ItemProductComponent
+        starDisplay={'block'}
         name={product.name}
         star={product.rating}
         starSize={starSize}
         price={product.price}
         product={imageLink}
         link={link} />
-    </Grid> 
+    </Grid>
   })
 
   productList = productList.slice(Math.max(productList.length - 6, 0))

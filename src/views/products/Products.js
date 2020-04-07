@@ -48,7 +48,8 @@ export default function Products() {
                     star={product.rating}
                     starSize={'1em'}
                     price={product.price}
-                    product={imageLink} />
+                    product={imageLink} 
+                    starDisplay={'block'}/>
             </Grid >
         )
     })

@@ -17,7 +17,7 @@ export default function ItemProductComponent(props) {
                 {/* </Button> */}
                 <Typography variant="h6" gutterBottom align='center'>
                     {props.name} </Typography>
-                <StarComponent star={props.star} size={props.starSize} />
+                <StarComponent star={props.star} size={props.starSize} starDisplay={props.starDisplay} />
                 <Typography variant="subtitle1" gutterBottom align='center'>
                     {props.price} </Typography>
             </Link>
@@ -26,16 +26,6 @@ export default function ItemProductComponent(props) {
 }
 
 const useStyles = makeStyles(theme => ({
-    imgProducts: {
-        display: 'block',
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        width: '1px',
-        marginTop: '50rem',
-        '&:hover': {
-            background: "#00000",
-        },
-    },
     title: {
         marginTop: '5%'
     },

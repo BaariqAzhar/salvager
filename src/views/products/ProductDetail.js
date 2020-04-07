@@ -10,6 +10,8 @@ import { useParams } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import Divider from '@material-ui/core/Divider';
 
+import ImgPattern from '../../assets/img/pattern2.png'
+
 export default function ProductDetail() {
     const classes = useStyles();
     const { id } = useParams();
@@ -36,41 +38,27 @@ export default function ProductDetail() {
     }, []);
 
     return (
-        <div>
+        <div className={classes.firstDiv}>
             <Container>
                 <NavbarSection theme='dark' />
                 <Grid container>
-                    <Grid item xs={12} sm={6} md={6}>
+                    <Grid item xs={12} sm={6} md={6} >
                         <img className={classes.productImage} src={productImageList[0]} />
                     </Grid>
                     <Grid item xs={12} sm={6} md={6}>
-                        <Grid container spacing={2}>
-                            <Grid item xs={12}>
-                                <div className={classes.productTextContainer}>
-                                    <Grid container spacing={1}>
-                                        <Grid item xs={12}>
-                                            <Typography gutterBottom variant="h4">
-                                                {product.name}
-                                            </Typography>
-                                        </Grid>
-                                        <Grid item xs={12}>
-                                            <StarComponent star={getAverageStars(productReviewlist)} size={'25%'} />
-                                        </Grid>
-                                        <Grid item xs={12}>
-                                            <Typography gutterBottom variant="h5">
-                                                Rp. {product.price}
-                                            </Typography>
-                                        </Grid>
-                                        <Divider />
-                                        <Grid item xs={12}>
-                                            <Typography component="p">
-                                                {product.description}
-                                            </Typography>
-                                        </Grid>
-                                    </Grid>
-                                </div>
-                            </Grid>
-                        </Grid>
+                        <div className={classes.productTextContainer}>
+                            <Typography gutterBottom variant="h2">
+                                {product.name}
+                            </Typography>
+                            <StarComponent starDisplay='' className={classes.star} align={'left'} star={getAverageStars(productReviewlist)} size={'2em'} />
+                            <Typography className={classes.price} gutterBottom variant="h4">
+                                Rp. {product.price}
+                            </Typography>
+                            <Divider />
+                            <Typography component="p">
+                                {product.description}
+                            </Typography>
+                        </div>
                     </Grid>
                 </Grid>
                 <ReviewSection reviews={productReviewlist} />
@@ -83,21 +71,33 @@ export default function ProductDetail() {
 function getAverageStars(reviews) {
     let reviewLength = reviews.length
     let totalReviewStars = reviews.reduce((a, b) => a + b, 0)
-    return Math.ceil( totalReviewStars/reviewLength ); 
+    return Math.ceil(totalReviewStars / reviewLength);
 }
 
 const useStyles = makeStyles(theme => ({
-    root: {
-        '& > *': {
-            margin: theme.spacing(1),
-        },
+    firstDiv: {
+        backgroundImage: `url(${ImgPattern})`,
+        backgroundSize: 'cover',
+        paddingTop: '8rem',
     },
     productTitle: {
         alignItems: 'center',
         marginTop: '1rem'
     },
     productImage: {
-        widht: '32rem',
-        height: '32rem'
+        display: 'block',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        width: '80%',
+        marginBottom: '2em'
+    },
+    star: {
+        // display: 'block',
+        // marginLeft: '1em',
+        // marginRight: 'auto',
+        // marginBottom: 'em',
+    },
+    price: {
+        marginTop: '0.5em'
     }
 }));
