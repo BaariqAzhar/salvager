@@ -45,11 +45,11 @@ export default function Products() {
                 <ItemProductComponent
                     link={link}
                     name={product.name}
-                    star={product.rating}
+                    star={getProductAverageRating(product)}
                     starSize={'1em'}
                     price={product.price}
-                    product={imageLink} 
-                    starDisplay={'block'}/>
+                    product={imageLink}
+                    starDisplay={'block'} />
             </Grid >
         )
     })
@@ -61,7 +61,7 @@ export default function Products() {
                     {productList}
                 </Grid>
             </Container>
-            <FooterSection/>
+            <FooterSection />
         </div>
     )
 }
@@ -90,38 +90,14 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-// function ItemProduct2(props) {
-//     const classes = useStyles();
-//     const product = props.product;
-//     const Star = product.rating;
-//     console.log(product.rating)
-// }
-
-// function ItemProduct(props) {
-//     const classes = useStyles();
-//     const Star = props.star;
-//     let StarImg;
-//     switch (props.star) {
-//         case '5':
-//             StarImg = ImgStar5
-//             break;
-//         case '4':
-//             StarImg = ImgStar4
-//             break;
-//         case '3':
-//             StarImg = ImgStar3
-//             break;
-//     }
-//     return (
-//         <div>
-//             <Link to={props.link} className={classes.link} style={{ textDecoration: 'none' }}>
-//                 <img className={classes.imgProducts} src={props.product} />
-//                 <Typography variant="h4" gutterBottom align='center'>
-//                     {props.name} </Typography>
-//                 <img className={classes.imgStar} src={StarImg} />
-//                 <Typography variant="subtitle1" gutterBottom align='center'>
-//                     {props.price} </Typography>
-//             </Link>
-//         </div>
-//     )
-// }
+function getProductAverageRating(product) {
+    if (product.product_reviews.length == 0) {
+        return 0
+    } else {
+        let reviewCount = product.product_reviews.length
+        let averageRating = product.product_reviews.reduce((acc, review) => {
+            return acc + (review.rating / reviewCount)
+        })
+        return averageRating
+    }
+}
