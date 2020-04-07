@@ -73,16 +73,11 @@ export default function FooterSection() {
                         <Typography variant="subtitle1" gutterBottom className={classes.text}>
                             Info
                     </Typography>
-                        <div className={classes.listSocialMedia}>
+                        {/* <div className={classes.listSocialMedia}>
                             <Typography display="inline" variant="subtitle2" gutterBottom className={classes.text}>
                                 Payment Info
                         </Typography>
-                        </div>
-                        <div className={classes.listSocialMedia}>
-                            <Typography display="inline" variant="subtitle2" gutterBottom className={classes.text}>
-                                FAQ
-                        </Typography>
-                        </div>
+                        </div> */}
                         <div className={classes.listSocialMedia}>
                             <Typography display="inline" variant="subtitle2" gutterBottom className={classes.text}>
                                 <Link to="/policy" className={classes.link} color="inherit">
@@ -92,8 +87,14 @@ export default function FooterSection() {
                         </div>
                         <div className={classes.listSocialMedia}>
                             <Typography display="inline" variant="subtitle2" gutterBottom className={classes.text}>
-                                Contact
-                        </Typography>
+                                <Link to="/contact" className={classes.link} color="inherit"> Contact
+                                </Link>
+                            </Typography>
+                        </div>
+                        <div className={classes.listSocialMedia}>
+                            <Typography display="inline" variant="subtitle2" gutterBottom className={classes.text}>
+                                FAQ
+                            </Typography>
                         </div>
                     </Grid>
                     <Grid item xs={12} sm={3} className={classes.gridItem}>
