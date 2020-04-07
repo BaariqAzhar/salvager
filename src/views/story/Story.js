@@ -17,6 +17,7 @@ import ImgStory3 from '../../assets/img/story3.png'
 
 
 export default function Story() {
+  window.scrollTo(0, 0)
   const classes = useStyles();
 
   return (
