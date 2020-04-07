@@ -7,6 +7,7 @@ import { Container, Grid } from '@material-ui/core';
 import ImgPattern from '../../assets/img/pattern2.png'
 
 export default function Terms() {
+    window.scrollTo(0, 0)
     const classes = useStyles();
 
     return (

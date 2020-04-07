@@ -23,6 +23,7 @@ import ImgTokopedia from '../../assets/img/tokped.png'
 import ImgEmail from '../../assets/img/email.png'
 
 export default function Contact() {
+    window.scrollTo(0, 0)
     const classes = useStyles();
 
     return (
