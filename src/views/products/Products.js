@@ -56,7 +56,7 @@ export default function Products() {
     })
     return (
         <div className={classes.firstDiv}>
-            <Container>
+            <Container className={classes.productsContainer}>
                 <NavbarSection theme='dark' />
                 <Grid container>
                     {productList}
@@ -72,6 +72,7 @@ const useStyles = makeStyles(theme => ({
         backgroundImage: `url(${ImgPattern})`,
         backgroundSize: 'cover',
         paddingTop: '5rem',
+        minHeight: '100%'
     },
     productImg: {
         width: '100%'
@@ -88,6 +89,10 @@ const useStyles = makeStyles(theme => ({
         marginBottom: '1rem'
     },
     link: {
+    },
+    productsContainer: {
+        marginTop: '4rem',
+        marginBottom: '10rem'
     }
 }));
 
