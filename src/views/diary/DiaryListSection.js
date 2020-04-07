@@ -41,16 +41,16 @@ export default function DiaryListSection() {
 
 
 const useStyles = makeStyles(theme => ({
-    root: {
-        display: 'flex',
-    },
-    details: {
-        display: 'flex',
-        flexDirection: 'column',
-    },
-    content: {
-        flex: '1 0 auto',
-    },
+    // root: {
+    //     display: 'flex',
+    // },
+    // details: {
+    //     display: 'flex',
+    //     flexDirection: 'column',
+    // },
+    // content: {
+    //     flex: '1 0 auto',
+    // },
     diaryImage: {
         // height: '32rem',
         width: '100%',
@@ -86,8 +86,8 @@ function ItemDiary(props) {
                                 </Typography>
                                 <Typography gutterBottom variant="h6">
                                     By {diary.created_by}
-                                </Typography>
-                                <Divider />
+                                </Typography> <br/>
+                                {/* <Divider /> */}
                                 <Typography component="p">
                                     {diary.content}
                                 </Typography>

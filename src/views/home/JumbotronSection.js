@@ -33,9 +33,9 @@ export default function JumbotronSection() {
                     {/* <NavbarSection theme="light" /> */}
                     <Grid container >
                         <Grid item item xs={12} sm={6} className={classes.descriptionBackground}>
-                            <Typography className={classes.descriptionText} variant="h5" gutterBottom>
+                            <Typography align='center' className={classes.descriptionText} variant="h5" gutterBottom>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </Typography>
-                            <Button className={classes.button} variant="contained">
+                            <Button align='center' className={classes.button} variant="contained">
                                 Find Out </Button>
                         </Grid>
                         <Grid item item xs={12} sm={6}>
@@ -57,9 +57,9 @@ const useStyles = makeStyles(theme => ({
         color: 'white'
     },
     button: {
-        backgroundColor: '#434c57',
-        color: 'white',
-        marginBottom: '5%',
+        display: 'block',
+        marginLeft: 'auto',
+        marginRight: 'auto',
     },
     firstContainer: {
         backgroundImage: `url(${HomeBackgroundImage})`,
