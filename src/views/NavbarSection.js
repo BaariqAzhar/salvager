@@ -38,7 +38,8 @@ let Color;
 export default function NavbarSection(props) {
     const [navColor, setNavColor] = useState('transparent')
     const [scroll, setScroll] = useState()
-    const classes = useStyles({ navColor });
+    const [logoSize, setLogoSize] = useState()
+    const classes = useStyles({ navColor, logoSize });
 
     useEffect(() => {
         const onScroll = e => {
@@ -234,7 +235,8 @@ const useStyles = makeStyles(theme => ({
         backgroundColor: 'transparent',
     },
     logo: {
-        width: '100%'
+        paddingTop: '0.01rem',
+        width: '60%'
     },
     link: {
         // color: Color,
