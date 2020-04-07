@@ -138,7 +138,7 @@ export default function NavbarSection(props) {
     if (isMobile) {
         return (
             <div>
-                <HideOnScroll {...props}>
+                {/* <HideOnScroll {...props}> */}
                     <AppBar elevation={0} className={classes.bgTransparent}>
                         <div position="static" className={classes.navbar}>
 
@@ -156,13 +156,13 @@ export default function NavbarSection(props) {
                             <img className={classes.mobileLogo} src={Logo} disply='inline' />
                         </div>
                     </AppBar>
-                </HideOnScroll>
+                {/* </HideOnScroll> */}
             </div>
         )
     } else {
         return (
             <div>
-                <HideOnScroll {...props}>
+                {/* <HideOnScroll {...props}> */}
                     <AppBar elevation={0} className={classes.bgTransparent}>
                         <div position="static" className={classes.navbar}>
                             <Container>
@@ -185,7 +185,7 @@ export default function NavbarSection(props) {
                             </Container>
                         </div>
                     </AppBar>
-                </HideOnScroll>
+                {/* </HideOnScroll> */}
             </div>
         )
     }
