@@ -222,7 +222,6 @@ const useStyles = makeStyles(theme => ({
         boxShadow: '0 3px 5px 2px edeeec',
         // boxShadow: 'none'
         backgroundColor: props.navColor,
-        paddingBottom: '1em',
     }),
     menuButton: {
         marginRight: theme.spacing(2),
