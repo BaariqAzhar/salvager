@@ -53,20 +53,26 @@ export default function FooterSection() {
                         <div className={classes.listSocialMedia}>
                             <img src={WaIcon} className={classes.icon} />
                             <Typography display="inline" variant="subtitle2" gutterBottom className={classes.text}>
-                                +628123456789
-                        </Typography>
-                        </div>
-                        <div className={classes.listSocialMedia}>
-                            <img src={TokpedIcon} className={classes.icon} />
-                            <Typography display="inline" variant="subtitle2" gutterBottom className={classes.text}>
-                                salvager
-                        </Typography>
+                                <a className={classes.link} href='https://wa.me/628123456789'>
+                                    +628123456789
+                                </a>
+                            </Typography>
                         </div>
                         <div className={classes.listSocialMedia}>
                             <img src={IgIcon} className={classes.icon} />
                             <Typography display="inline" variant="subtitle2" gutterBottom className={classes.text}>
-                                salvagerindonesia
-                        </Typography>
+                                <a className={classes.link} href='https://www.instagram.com/salvagerindonesia/'>
+                                    salvagerindonesia
+                                </a>
+                            </Typography>
+                        </div>
+                        <div className={classes.listSocialMedia}>
+                            <img src={TokpedIcon} className={classes.icon} />
+                            <Typography display="inline" variant="subtitle2" gutterBottom className={classes.text}>
+                                <a className={classes.link} href='https://www.tokopedia.com/'>
+                                    salvagerindonesia
+                                </a>
+                            </Typography>
                         </div>
                     </Grid>
                     <Grid item xs={12} sm={2} className={classes.gridItem}>
