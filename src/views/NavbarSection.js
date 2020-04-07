@@ -36,6 +36,26 @@ let Color;
 
 {/* <NavbarSection theme='light' /> */ }
 export default function NavbarSection(props) {
+    const [navColor, setNavColor] = useState('transparent')
+    const [scroll, setScroll] = useState()
+    const classes = useStyles({ navColor });
+
+    useEffect(() => {
+        const onScroll = e => {
+            setScroll(e.target.documentElement.scrollTop);
+            if (scroll >= 300) {
+                if (navColor !== "black") {
+                    setNavColor("black");
+                }
+            } else {
+                if (navColor !== "transparent") {
+                    setNavColor("transparent" );
+                }
+            }
+        };
+        window.addEventListener("scroll", onScroll);
+        console.log("Scroll top " + scroll)
+    }, [scroll]);
 
     let isMobile = false;
     if (window.innerWidth >= 425) {
@@ -47,7 +67,6 @@ export default function NavbarSection(props) {
     }
     console.log(window.innerWidth)
 
-    const classes = useStyles();
     let Logo;
     let LogoMobile;
     let IconBurger;
@@ -193,14 +212,14 @@ const useStyles = makeStyles(theme => ({
         marginTop: '1em',
     },
 
-    navbar: {
+    navbar: props => ({
         color: 'black',
         // height: 48,
         // padding: '0 30px',
         boxShadow: '0 3px 5px 2px edeeec',
         // boxShadow: 'none'
-        backgroundColor: 'transparent',
-    },
+        backgroundColor: props.navColor,
+    }),
     menuButton: {
         marginRight: theme.spacing(2),
         width: '70%',
