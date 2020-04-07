@@ -9,6 +9,7 @@ import { Container } from '@material-ui/core';
 import ImgPattern from '../../assets/img/pattern2.png'
 
 export default function Diary() {
+    window.scrollTo(0, 0)
     const classes = useStyles();
 
     return (

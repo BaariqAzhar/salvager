@@ -28,7 +28,7 @@ import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Slide from '@material-ui/core/Slide';
 
 export default function Home(props) {
-
+  window.scrollTo(0, 0)
   const classes = useStyles();
 
   return (

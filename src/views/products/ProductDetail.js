@@ -13,6 +13,7 @@ import Divider from '@material-ui/core/Divider';
 import ImgPattern from '../../assets/img/pattern2.png'
 
 export default function ProductDetail() {
+    window.scrollTo(0, 0)
     const classes = useStyles();
     const { id } = useParams();
     const [product, setProduct] = useState([])

@@ -23,6 +23,7 @@ import ImgTokopedia from '../../assets/img/tokped.png'
 import ImgEmail from '../../assets/img/email.png'
 
 export default function Contact() {
+    window.scrollTo(0, 0)
     const classes = useStyles();
 
     return (
@@ -33,17 +34,26 @@ export default function Contact() {
                 <div align='center' className={classes.list}>
                     <img src={ImgWhatsapp} />
                     <Typography className={classes.listText} display="inline" variant="h6" gutterBottom align="center">
-                        +6232234324234 </Typography>
+                        <a className={classes.link} href='https://wa.me/628123456789'>
+                            +628123456789
+                        </a>
+                    </Typography>
                 </div>
                 <div align='center' className={classes.list}>
                     <img src={ImgIg} />
                     <Typography className={classes.listText} display="inline" variant="h6" gutterBottom align="center">
-                        salvagerindonesia </Typography>
+                        <a className={classes.link} href='https://www.tokopedia.com/'>
+                            salvagerindonesia
+                        </a>
+                    </Typography>
                 </div>
                 <div align='center' className={classes.list}>
                     <img src={ImgTokopedia} />
                     <Typography className={classes.listText} display="inline" variant="h6" gutterBottom align="center">
-                        salvagerindonesia </Typography>
+                        <a className={classes.link} href='https://www.instagram.com/salvagerindonesia/'>
+                            salvagerindonesia
+                        </a>
+                    </Typography>
                 </div>
                 <div align='center' className={classes.list}>
                     <img src={ImgEmail} />
@@ -98,7 +108,7 @@ export default function Contact() {
                         align="center">
                         <Button className={classes.button} variant="contained">Send Now</Button>
                     </Grid>
-                    
+
                 </Grid>
             </Container>
             <FooterSection />
@@ -143,5 +153,8 @@ const useStyles = makeStyles(theme => ({
         backgroundColor: '#434c57',
         color: 'white',
         marginBottom: '5%',
-    }
+    },
+    link: {
+        color: 'black'
+    },
 }));

@@ -22,6 +22,7 @@ import ImgStar4 from '../../assets/img/star4.png'
 import ImgStar3 from '../../assets/img/star3.png'
 
 export default function Products() {
+    window.scrollTo(0, 0)
     const classes = useStyles();
     const [products, setProducts] = useState([])
 
