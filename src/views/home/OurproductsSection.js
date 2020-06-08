@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import '../../assets/css/home.css'
 import Grid from '@material-ui/core/Grid';
+import Container from '@material-ui/core/Container'
 import Typography from '@material-ui/core/Typography';
 import ItemProductComponent from '../ItemProductComponent';
 

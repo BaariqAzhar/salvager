@@ -12,9 +12,9 @@ export default function ItemProductComponent(props) {
     return (
         <div className={classes.firstDiv}>
             <Link to={props.link} style={{ textDecoration: 'none' }}>
-                {/* <Button> */}
-                <img className={classes.imgProducts} src={props.product} />
-                {/* </Button> */}
+                <Button>
+                    <img className={classes.imgProducts} src={props.product} />
+                </Button>
                 <Typography variant="h6" gutterBottom align='center'>
                     {props.name} </Typography>
                 <StarComponent star={props.star} size={props.starSize} starDisplay={props.starDisplay} />
@@ -33,6 +33,7 @@ const useStyles = makeStyles(theme => ({
         width: '100%'
     },
     firstDiv: {
-        margin: '1em'
+        // marginRight: '1em',
+        // marginLeft: '0.5em'
     }
 }));

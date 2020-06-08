@@ -19,45 +19,52 @@ export default function VideoSection() {
     const classes = useStyles();
 
     return (
-        <div>
-            <Container className={classes.container}>
-                <Grid container>
+        <div className={classes.container}>
+            {/* <Container  */}
+                <Grid container >
                     <Grid item xs={12} sm={6}>
                         <img className={classes.ImgVideo} src={ImgVideo} />
                     </Grid>
                     <Grid item xs={12} sm={6}>
-                        <Typography className={classes.description} variant="body1" gutterBottom>
+                        <Typography align="justify" className={classes.description} variant="h5" gutterBottom>
                             It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release.
-                            <br /><br /> Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                            <br /> Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
                         </Typography>
                         <Button className={classes.button} variant="contained">
                             Find Out </Button>
                     </Grid>
                 </Grid>
-            </Container>
+            {/* </Container> */}
         </div>
     )
 }
 
 const useStyles = makeStyles(theme => ({
-    root: {
-        '& > *': {
-            margin: theme.spacing(1),
-        },
-    },
+    // root: {
+    //     '& > *': {
+    //         margin: theme.spacing(1),
+    //     },
+    // },
     container: {
         marginTop: '2%'
     },
     ImgVideo: {
-        width: '100%',
+        width: '95%',
+        marginTop: '2em',
+        marginRight: '0.5em',
+        marginLeft: '0.5em',
     },
     description: {
-        marginLeft: '1em'
+        marginTop: '1em',
+        marginRight: '0.5em',
+        marginLeft: '0.5em',
     },
     button: {
         backgroundColor: '#434c57',
         color: 'white',
-        marginBottom: '5%',
-        marginLeft: '1em'
+        marginTop: '0.5em',
+        marginBottom: '2em',
+        marginRight: '0.5em',
+        marginLeft: '1em',
     },
 }));

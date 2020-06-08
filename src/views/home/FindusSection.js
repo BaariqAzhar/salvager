@@ -27,13 +27,15 @@ export default function FindusSection() {
 
     let instagramList = instagrams.map((instagram) => {
 
-        return <Grid item xs={12} sm={4}>
-            <Button>
+        return (
+            <Grid item xs={12} sm={4}>
+                <Button>
                 <a href={instagram.post_url}>
                     <img className={classes.igPhoto} src={instagram.image} />
                 </a>
-            </Button>
-        </Grid>
+                </Button>
+            </Grid>
+        )
     })
 
     instagramList = instagramList.slice(Math.max(instagramList.length - 3, 0))

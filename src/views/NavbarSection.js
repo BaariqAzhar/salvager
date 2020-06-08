@@ -115,7 +115,9 @@ export default function NavbarSection(props) {
         >
             <List>
                 <ListItem>
-                    <Button><Link to='/' className={classes.linkMobile} color="inherit">HOME</Link></Button>
+                    <Button>
+                        <Link to='/' className={classes.linkMobile} color="inherit">HOME</Link>
+                    </Button>
                 </ListItem>
                 <Divider />
                 <ListItem>
@@ -171,18 +173,20 @@ export default function NavbarSection(props) {
                         <Container>
                             <Grid container>
                                 <Grid item xs={12} sm={6}>
-                                    <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                                        <img className={classes.logo} src={Logo} />
-                                    </IconButton>
+                                    {/* <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu"> */}
+                                    <img className={classes.logo} src={Logo} />
+                                    {/* </IconButton> */}
                                 </Grid>
                                 <Grid item xs={12} sm={6}>
-                                    <Toolbar>
-                                        <Button><Link style={{ color: Color }} className={classes.link} to='/' color="inherit">HOME</Link></Button>
-                                        <Button><Link style={{ color: Color }} className={classes.link} to='/story' color="inherit">STORY</Link></Button>
-                                        <Button><Link style={{ color: Color }} className={classes.link} to='/products' color="inherit">PRODUCTS</Link></Button>
-                                        <Button><Link style={{ color: Color }} className={classes.link} to='/diary' color="inherit">DIARY</Link></Button>
-                                        <Button><Link style={{ color: Color }} className={classes.link} to='/contact' color="inherit">CONTACT</Link></Button>
-                                    </Toolbar>
+                                    <div className={classes.floatRight}>
+                                        <Toolbar>
+                                            <Button><Link style={{ color: Color }} className={classes.link} to='/' color="inherit">HOME</Link></Button>
+                                            <Button><Link style={{ color: Color }} className={classes.link} to='/story' color="inherit">STORY</Link></Button>
+                                            <Button><Link style={{ color: Color }} className={classes.link} to='/products' color="inherit">PRODUCTS</Link></Button>
+                                            <Button><Link style={{ color: Color }} className={classes.link} to='/diary' color="inherit">DIARY</Link></Button>
+                                            <Button><Link style={{ color: Color }} className={classes.link} to='/contact' color="inherit">CONTACT</Link></Button>
+                                        </Toolbar>
+                                    </div>
                                 </Grid>
                             </Grid>
                         </Container>
@@ -222,6 +226,7 @@ const useStyles = makeStyles(theme => ({
         boxShadow: '0 3px 5px 2px edeeec',
         // boxShadow: 'none'
         backgroundColor: props.navColor,
+        paddingBottom: '1em',
     }),
     menuButton: {
         marginRight: theme.spacing(2),
@@ -235,7 +240,7 @@ const useStyles = makeStyles(theme => ({
     },
     logo: {
         paddingTop: '0.01rem',
-        width: '60%'
+        height: '100%'
     },
     link: {
         // color: Color,
@@ -244,6 +249,9 @@ const useStyles = makeStyles(theme => ({
     },
     linkMobile: {
         color: 'black',
+    },
+    floatRight: {
+        float: 'right',
     }
 }));
 

@@ -29,16 +29,15 @@ export default function JumbotronSection() {
     return (
         <div>
             <div className={classes.firstContainer}>
-                <Container>
-                    {/* <NavbarSection theme="light" /> */}
+                <Container >
                     <Grid container >
-                        <Grid item item xs={12} sm={6} className={classes.descriptionBackground}>
+                        <Grid item item xs={12} sm={4} className={classes.descriptionBackground}>
                             <Typography align='center' className={classes.descriptionText} variant="h5" gutterBottom>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </Typography>
-                            <Button align='center' className={classes.button} variant="contained">
+                            <Button  className={classes.button} variant="contained">
                                 Find Out </Button>
                         </Grid>
-                        <Grid item item xs={12} sm={6}>
+                        <Grid item item xs={12} sm={8}>
                         </Grid>
                     </Grid>
                 </Container>

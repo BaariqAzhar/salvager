@@ -46,11 +46,11 @@ export default function Home(props) {
 }
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    '& > *': {
-      margin: theme.spacing(1),
-    },
-  },
+  // root: {
+  //   '& > *': {
+  //     margin: theme.spacing(1),
+  //   },
+  // },
   backgroundImage: {
     width: '100%',
     position: 'absolute',
