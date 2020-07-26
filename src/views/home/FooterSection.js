@@ -97,11 +97,11 @@ export default function FooterSection() {
                                 </Link>
                             </Typography>
                         </div>
-                        <div className={classes.listSocialMedia}>
+                        {/* <div className={classes.listSocialMedia}>
                             <Typography display="inline" variant="subtitle2" gutterBottom className={classes.text}>
                                 FAQ
                             </Typography>
-                        </div>
+                        </div> */}
                     </Grid>
                     <Grid item xs={12} sm={3} className={classes.gridItem}>
                         <div>
